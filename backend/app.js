@@ -5,6 +5,7 @@ var path = require('path');//direccion
 
 
 var tipdoc = require('./src/rutas/tipdocruta');//ruta
+var cliente = require('./src/rutas/clienteruta');
 
 
 var app = express();//recibe un constructor
@@ -41,6 +42,7 @@ app.use(function (req, res, next)
 
 
   app.use('/tipdoc', tipdoc());//ruta para el servicio
+  app.use('/cliente', cliente());//ruta para el servicio  
 
 
 http.createServer(app).listen(app.get('port'), function ( )

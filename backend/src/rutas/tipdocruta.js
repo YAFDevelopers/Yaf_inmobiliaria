@@ -85,7 +85,7 @@ module.exports = function ()
 
         var TipDocData =
             {
-                IdtipoddeDocumento_TipodeDocumentos: req.body.	IdtipoddeDocumento_TipodeDocumentos,
+                IdtipoddeDocumento_TipodeDocumentos: req.body.IdtipoddeDocumento_TipodeDocumentos,
                 NombreTipodeDocumento_TipodeDocumentos: req.body.NombreTipodeDocumento_TipodeDocumentos,
                 InicialTipodeDocumento_TipodeDocumentos: req.body.InicialTipodeDocumento_TipodeDocumentos,
             };
