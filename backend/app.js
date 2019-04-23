@@ -1,4 +1,4 @@
-var express = require('express');//guarda express que nosotros intalamos
+﻿var express = require('express');//guarda express que nosotros intalamos
 var bodyParser = require('body-parser'), port = 3000;//rmanejo de cuerpo de la "pagina" y puerto
 var http = require('http');//protocolo de intercambio de archivos
 var path = require('path');//direccion
@@ -8,7 +8,8 @@ var tipdoc = require('./src/rutas/tipdocruta');//ruta
 var cliente = require('./src/rutas/clienteruta');
 var inmueble = require('./src/rutas/inmuebles');
 var tipoinmueble = require('./src/rutas/tipoinmueblesrutas');
-
+var citas = require('./src/rutas/Citaruta');//ruta citas
+var Agentes = require('./src/rutas/Agenteruta');//ruta agentes
 
 var app = express();//recibe un constructor
 
