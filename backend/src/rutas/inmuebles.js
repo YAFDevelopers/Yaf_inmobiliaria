@@ -55,9 +55,9 @@ module.exports = function ()
         //creamos un objeto Json con los datos del tipo de documento
         var InmuebleData =
             {
-                IdInmuble_Inmuebles: null,
+                IdInmueble_Inmuebles: null,
                 IdTipoInmueble_Inmuebles: req.body.IdTipoInmueble_Inmuebles,
-                NombreInmuble_Inmuebles: req.body.NombreInmuble_Inmuebles,
+                NombreInmueble_Inmuebles: req.body.NombreInmueble_Inmuebles,
                 Descripcon_Inmuebles: req.body.Descripcon_Inmuebless,
                 Direccion_Inmuebles: req.body.Direccion_Inmuebles,
                 Valor_Inmuebles: req.body.Valor_Inmuebles,
@@ -89,9 +89,9 @@ module.exports = function ()
 
         var InmuebleData =
             {
-                IdInmuble_Inmuebles: null,
+                IdInmueble_Inmuebles: null,
                 IdTipoInmueble_Inmuebles: req.body.IdTipoInmueble_Inmuebles,
-                NombreInmuble_Inmuebles: req.body.NombreInmuble_Inmuebles,
+                NombreInmueble_Inmuebles: req.body.NombreInmueble_Inmuebles,
                 Descripcon_Inmuebles: req.body.Descripcon_Inmuebless,
                 Direccion_Inmuebles: req.body.Direccion_Inmuebles,
                 Valor_Inmuebles: req.body.Valor_Inmuebles,

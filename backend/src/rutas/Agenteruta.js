@@ -57,17 +57,18 @@ module.exports = function ()
         var AgenteData =
             {
                 IdAgente_Agentes: null,
-                NumeroDocumento_Agentes: req.body.NumeroDocumento_Agentes,
                 IdTipoDocumento_Agentes: req.body.IdTipoDocumento_Agentes,
+                NumeroDocumento_Agentes: req.body.NumeroDocumento_Agentes,                
                 PrimerNombre_Agentes: req.body.PrimerNombre_Agentes,
                 SegundoNombre_Agentes: req.body.SegundoNombre_Agentes,
                 PrimerApellido_Agentes: req.body.PrimerApellido_Agentes,
                 SegundoApellido_Agentes: req.body.SegundoApellido_Agentes,
                 FechaNacimiento_Agentes: req.body.FechaNacimiento_Agentes,
                 Correo_Agentes: req.body.Correo_Agentes,
+                Contraseña_Agentes: req.body.Contraseña_Agentes,
                 NumeroTelfono_Agentes: req.body.NumeroTelfono_Agentes,
-                Estado_Agente: req.body.Estado_Agente,
-                FechaRegistro_Agente: req.body.FechaRegistro_Agente,
+                Estado_Agentes: req.body.Estado_Agentes,
+                FechaRegistro_Agentes: null,
             };
 
 
@@ -94,17 +95,19 @@ module.exports = function ()
 
         var AgenteData =
             {
-                IdAgente_Agentes: IdAgente_Agentes,
-                Documento_Agentes: req.body.NumeroDocumento_Agentes,
+                IdAgente_Agentes: req.body.IdAgente_Agentes,
                 IdTipoDocumento_Agentes: req.body.IdTipoDocumento_Agentes,
+                NumeroDocumento_Agentes: req.body.NumeroDocumento_Agentes,
                 PrimerNombre_Agentes: req.body.PrimerNombre_Agentes,
                 SegundoNombre_Agentes: req.body.SegundoNombre_Agentes,
                 PrimerApellido_Agentes: req.body.PrimerApellido_Agentes,
                 SegundoApellido_Agentes: req.body.SegundoApellido_Agentes,
                 FechaNacimiento_Agentes: req.body.FechaNacimiento_Agentes,
                 NumeroTelfono_Agentes: req.body.NumeroTelfono_Agentes,
-                Estado_Agente: req.body.Estado_Agente,
-                FechaRegistro_Agente: req.body.FechaRegistro_Agente,
+                Correo_Agentes: req.body.Correo_Agentes,
+                Contraseña_Agentes: req.body.Contraseña_Agentes,
+                Estado_Agentes: req.body.Estado_Agentes,
+                FechaRegistro_Agentes: req.body.FechaRegistro_Agentes,
             };
 
 

@@ -8,7 +8,7 @@ inmuebleModel.getInmuebles = function (callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM Inmubles;";
+        var sql = "SELECT * FROM Inmuebles;";
         
         connection.query(sql, function (error, rows) 
         {
@@ -30,8 +30,8 @@ inmuebleModel.getInmueble = function (id, callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM Inmubles "
-                        +" WHERE IdInmuble_Inmuebles  = " 
+        var sql = "SELECT * FROM Inmuebles "
+                        +" WHERE IdInmueble_Inmuebles  = " 
                         + connection.escape(id) + ";";
 
         //console.log(id);
@@ -57,7 +57,7 @@ inmuebleModel.insertInmueble = function (InmuebleData, callback)
 {
     if (connection)
     {
-        var sql = "INSERT INTO Inmubles SET ?";
+        var sql = "INSERT INTO Inmuebles SET ?";
 
         connection.query(sql, InmuebleData, function (error, result)
         {
@@ -75,21 +75,21 @@ inmuebleModel.insertInmueble = function (InmuebleData, callback)
 }
 
 //---------------------------------------------------------------
-//actualizar un Inmubles
+//actualizar un Inmuebles
 inmuebleModel.updateInmueble = function (InmuebleData, callback)
  {
 
     
     if (connection)
     {
-        var sql = "UPDATE Inmubles SET IdTipoInmueble_Inmuebles = " + connection.escape(InmuebleData.IdTipoInmueble_Inmuebles)
-                    + ",NombreInmuble_Inmuebles = " + connection.escape(InmuebleData.NombreInmuble_Inmuebles)
+        var sql = "UPDATE Inmuebles SET IdTipoInmueble_Inmuebles = " + connection.escape(InmuebleData.IdTipoInmueble_Inmuebles)
+                    + ",NombreInmueble_Inmuebles = " + connection.escape(InmuebleData.NombreInmueble_Inmuebles)
                     + ",Descripcon_Inmuebles = " + connection.escape(InmuebleData.Descripcon_Inmuebles)
                     + ",Direccion_Inmuebles = " + connection.escape(InmuebleData.Direccion_Inmuebles)
                     + ",Valor_Inmuebles = " + connection.escape(InmuebleData.Valor_Inmuebles)
                     + ",Estado_Inmuebles = " + connection.escape(InmuebleData.Estado_Inmuebles)
                     + ",FechaRegistro_Inmuebles = " + connection.escape(InmuebleData.FechaRegistro_Inmuebles)
-                    + " WHERE  IdInmuble_Inmuebles =  " + connection.escape(InmuebleData.IdInmuble_Inmuebles)+";";
+                    + " WHERE  IdInmueble_Inmuebles =  " + connection.escape(InmuebleData.IdInmueble_Inmuebles)+";";
 
         connection.query(sql, function (error, result)
         {

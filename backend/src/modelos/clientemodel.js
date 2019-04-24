@@ -89,6 +89,7 @@ clienteModel.updateCliente = function (ClienteData, callback)
                     + ", SegundoApellido_Clientes = " + connection.escape(ClienteData.SegundoApellido_Clientes)
                     + ", FechaNacimiento_Clientes = " + connection.escape(ClienteData.FechaNacimiento_Clientes)
                     + ", Correo_Clientes = " + connection.escape(ClienteData.Correo_Clientes)
+                    + ", Contraseña_Clientes = " + connection.escape(ClienteData.Contraseña_Clientes)
                     + ", NumeroTelefono_Clientes = " + connection.escape(ClienteData.NumeroTelefono_Clientes)
                     + ", Estado_Clientes = " + connection.escape(ClienteData.Estado_Clientes)
                     + " WHERE  	IdCliente_Clientes  =  " + connection.escape(ClienteData.IdCliente_Clientes)+";";

@@ -8,7 +8,7 @@ CitaModel.getCitas = function (callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM citas;";
+        var sql = "SELECT * FROM Citas;";
         
         connection.query(sql, function (error, rows) 
         {
@@ -30,7 +30,7 @@ CitaModel.getCita = function (id, callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM citas  "
+        var sql = "SELECT * FROM Citas  "
                         +" WHERE IdCita_Citas  = " 
                         + connection.escape(id) + ";";
 
@@ -57,7 +57,7 @@ CitaModel.insertCita = function (CitaData, callback)
 {
     if (connection)
     {
-        var sql = "INSERT INTO citas SET ?";
+        var sql = "INSERT INTO Citas SET ?";
 
         connection.query(sql, CitaData, function (error, result)
         {
@@ -81,13 +81,13 @@ CitaModel.updatecita = function (CitaData, callback)
     
     if (connection)
     {
-        var sql = "UPDATE citas SET Fecha_Citas = " + connection.escape(CitaData.Fecha_Citas)
+        var sql = "UPDATE Citas SET Fecha_Citas = " + connection.escape(CitaData.Fecha_Citas)
                     + ", Hora_Citas = " + connection.escape(CitaData.Hora_Citas)
                     + ", Estado_Citas = "+ connection.escape(CitaData.Estado_Citas)
                     + ", IdCliente_Citas = "+ connection.escape(CitaData.IdCliente_Citas)
-                    + ", IdAgente_Citas = "+ conexion.escape(CitaData.IdAgente_Citas)
-                    + ", IdInmueble_Citas = "+ conexion.escape(CitaData.IdInmueble_Citas)
-                    + ", FechaRegistro_Citas = "+ conexion.escape(CitaData.FechaRegistro_Citas)
+                    + ", IdAgente_Citas = "+ connection.escape(CitaData.IdAgente_Citas)
+                    + ", IdInmueble_Citas = "+ connection.escape(CitaData.IdInmueble_Citas)
+                    + ", FechaRegistro_Citas = "+ connection.escape(CitaData.FechaRegistro_Citas)
                     + " WHERE  IdCita_Citas  =  " + connection.escape(CitaData.IdCita_Citas)+";";
 
         connection.query(sql, function (error, result)

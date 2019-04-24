@@ -8,7 +8,7 @@ AgenteModel.getAgentes = function (callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM agente;";
+        var sql = "SELECT * FROM Agentes;";
         
         connection.query(sql, function (error, rows) 
         {
@@ -30,7 +30,7 @@ AgenteModel.getAgente = function (id, callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM agente "
+        var sql = "SELECT * FROM Agentes "
                         +" WHERE IdAgente_Agentes  = " 
                         + connection.escape(id) + ";";
 
@@ -57,7 +57,7 @@ AgenteModel.insertAgente = function (AgenteData, callback)
 {
     if (connection)
     {
-        var sql = "INSERT INTO agente SET ?";
+        var sql = "INSERT INTO Agentes SET ?";
 
         connection.query(sql, AgenteData, function (error, result)
         {
@@ -81,17 +81,18 @@ AgenteModel.updateAgente = function (AgenteData, callback)
 
     if (connection)
     {
-        var sql = "UPDATE agentes SET NumeroDocumento_Agentes = " + connection.escape(AgenteData.NumeroDocumento_Agentes)
-                    + ", IdTipoDocumento_Agentes = " + connection.escape(AgenteData.IdTipoDocumento_Agentes)
+        var sql = "UPDATE Agentes SET IdTipoDocumento_Agentes = " + connection.escape(AgenteData.IdTipoDocumento_Agentes)
+                    + ", NumeroDocumento_Agentes = " + connection.escape(AgenteData.NumeroDocumento_Agentes)
                     + ", PrimerNombre_Agentes = " + connection.escape(AgenteData.PrimerNombre_Agentes)
                     + ", SegundoNombre_Agentes = " + connection.escape(AgenteData.SegundoNombre_Agentes)
                     + ", PrimerApellido_Agentes = " + connection.escape(AgenteData.PrimerApellido_Agentes)
                     + ", SegundoApellido_Agentes = " + connection.escape(AgenteData.SegundoApellido_Agentes)
                     + ", FechaNacimiento_Agentes = " + connection.escape(AgenteData.FechaNacimiento_Agentes)
                     + ", Correo_Agentes = " + connection.escape(AgenteData.Correo_Agentes)
+                    + ", Contraseña_Agentes = " + connection.escape(AgenteData.Contraseña_Agentes)
                     + ", NumeroTelfono_Agentes = " + connection.escape(AgenteData.NumeroTelfono_Agentes)
-                    + ", Estado_Agente = " + connection.escape(AgenteData.Estado_Agente)
-                    + ", FechaRegistro_Agente = " + connection.escape(AgenteData.FechaRegistro_Agente)
+                    + ", Estado_Agentes = " + connection.escape(AgenteData.Estado_Agente)
+                    + ", FechaRegistro_Agentes = " + connection.escape(AgenteData.FechaRegistro_Agente)
                     + " WHERE  IdAgente_Agentes  =  " + connection.escape(AgenteData.IdAgente_Agentes)+";";
         connection.query(sql, function (error, result)
         {

@@ -8,8 +8,8 @@ var tipdoc = require('./src/rutas/tipdocruta');//ruta
 var cliente = require('./src/rutas/clienteruta');
 var inmueble = require('./src/rutas/inmuebles');
 var tipoinmueble = require('./src/rutas/tipoinmueblesrutas');
-var citas = require('./src/rutas/Citaruta');//ruta citas
-var Agentes = require('./src/rutas/Agenteruta');//ruta agentes
+var cita = require('./src/rutas/Citaruta');//ruta citas
+var agente = require('./src/rutas/Agenteruta');//ruta agentes
 
 var app = express();//recibe un constructor
 
@@ -47,7 +47,9 @@ app.use(function (req, res, next)
   app.use('/tipdoc', tipdoc());//ruta para el servicio
   app.use('/cliente', cliente());//ruta para el servicio  
   app.use('/inmueble', inmueble());//ruta para el servicio  
-  app.use('/tipoinmueble', tipoinmueble());//ruta para el servicio  
+  app.use('/tipoinmueble', tipoinmueble());//ruta para el servicio
+  app.use('/agente', agente());//ruta para el servicio    
+  app.use('/cita', cita());//ruta para el servicio 
 
 
 http.createServer(app).listen(app.get('port'), function ( )

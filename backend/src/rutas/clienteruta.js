@@ -65,6 +65,7 @@ module.exports = function ()
                 SegundoApellido_Clientes: req.body.SegundoApellido_Clientes,
                 FechaNacimiento_Clientes: req.body.FechaNacimiento_Clientes,
                 Correo_Clientes: req.body.Correo_Clientes,
+                Contraseña_Clientes: req.body.Contraseña_Clientes,
                 NumeroTelefono_Clientes: req.body.NumeroTelefono_Clientes,
                 Estado_Clientes: req.body.Estado_Clientes,
                 
@@ -103,6 +104,7 @@ module.exports = function ()
                 SegundoApellido_Clientes: req.body.SegundoApellido_Clientes,
                 FechaNacimiento_Clientes: req.body.FechaNacimiento_Clientes,
                 Correo_Clientes: req.body.Correo_Clientes,
+                Contraseña_Clientes: req.body.Contraseña_Clientes,
                 NumeroTelefono_Clientes: req.body.NumeroTelefono_Clientes,
                 Estado_Clientes: req.body.Estado_Clientes,
                 
