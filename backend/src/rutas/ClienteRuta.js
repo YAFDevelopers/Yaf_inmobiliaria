@@ -1,5 +1,5 @@
 //obtenemos el modelo ClienteModel con toda la funcionalidad
-var ClienteModel = require('../modelos/clientemodel');
+var ClienteModel = require('../modelos/ClienteModel');
 var express = require('express');
 var router = express.Router();
 

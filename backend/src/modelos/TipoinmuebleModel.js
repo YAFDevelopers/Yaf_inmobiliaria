@@ -81,7 +81,7 @@ TipInmuebleModel.updateTipInmueble = function (TipInmuebleData, callback)
 
     if (connection)
     {
-        var sql = "UPDATE TipoInmuebles SET NombreTipoInmueble = " + connection.escape(TipInmuebleData.NombreTipoInmueble)
+        var sql = "UPDATE TipoInmuebles SET NombreTipoInmueble_TipoInmuebles = " + connection.escape(TipInmuebleData.NombreTipoInmueble_TipoInmuebles)
                     + " WHERE IdTipoInmueble_TipoInmuebles  =  " + connection.escape(TipInmuebleData.IdTipoInmueble_TipoInmuebles)+";";
 
         connection.query(sql, function (error, result)
