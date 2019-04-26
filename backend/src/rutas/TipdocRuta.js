@@ -1,5 +1,5 @@
 //obtenemos el modelo TipDocModel con toda la funcionalidad
-var TipInmuebleModel = require('../modelos/tipoinmueblemodelo');
+var TipDocModel = require('../modelos/TipdocModel');
 var express = require('express');
 var router = express.Router();
 
@@ -11,7 +11,7 @@ module.exports = function ()
     //Muestra el método CRUL Listar que muestra todos los tipos de documentos
     router.get("/", function (req, res)
     {
-        TipInmuebleModel.getTipInmuebles(function (error, data)
+        TipDocModel.getTipDocs(function (error, data)
         {
             res.status(200).json(data);
         });
@@ -26,7 +26,7 @@ module.exports = function ()
         //solo actualizamos si la id es un número
         if (!isNaN(id))
         {
-            TipInmuebleModel.getTipInmueble(id, function (error, data)
+            TipDocModel.getTipDoc(id, function (error, data)
             {
                 //si el tipo de documento existe lo mostramos en formato json
                 if (typeof data !== 'undefined' && data.length > 0)
@@ -54,16 +54,16 @@ module.exports = function ()
     router.post("/", function (req, res)
     {
         //creamos un objeto Json con los datos del tipo de documento
-        var TipInmuebleData =
+        var TipDocData =
             {
-                IdTipoInmueble_TipoInmuebles: null,
-                NombreTipoInmueble: req.body.NombreTipoInmueble,
-               
+                IdtipoddeDocumento_TipodeDocumentos: null,
+                NombreTipodeDocumento_TipodeDocumentos: req.body.NombreTipodeDocumento_TipodeDocumentos,
+                InicialTipodeDocumento_TipodeDocumentos: req.body.InicialTipodeDocumento_TipodeDocumentos,
             };
 
 
         //usamos la funcion para insertar
-        TipInmuebleModel.insertTipInmueble(TipInmuebleData, function (error, data)
+        TipDocModel.insertTipDoc(TipDocData, function (error, data)
         {
             //se muestra el mensaje correspondiente
             if (data)
@@ -83,15 +83,16 @@ module.exports = function ()
     {
         //almacenamos los datos de la petición en un objeto
 
-        var TipInmuebleData =
+        var TipDocData =
             {
-                IdTipoInmueble_TipoInmuebles: null,
-                NombreTipoInmueble: req.body.NombreTipoInmueble,
+                IdtipoddeDocumento_TipodeDocumentos: req.body.IdtipoddeDocumento_TipodeDocumentos,
+                NombreTipodeDocumento_TipodeDocumentos: req.body.NombreTipodeDocumento_TipodeDocumentos,
+                InicialTipodeDocumento_TipodeDocumentos: req.body.InicialTipodeDocumento_TipodeDocumentos,
             };
 
 
         //usamos la funcion para actualizar
-        TipInmuebleModel.updateTipInmueble (TipInmuebleData, function (error, data)
+        TipDocModel.updateTipDoc(TipDocData, function (error, data)
         {
             //se muestra el mensaje correspondiente
             if (data && data.msg)
