@@ -1,9 +1,8 @@
-//obtenemos el modelo TipDocModel con toda la funcionalidad
-var TipDocModel = require('../modelos/tipdocmodel');
+var InmuebleModel = require('../modelos/InmueblesModel');
 var express = require('express');
 var router = express.Router();
 
-//creamos el ruteo de la clase
+//creamos el ruteo de la clasecl
 module.exports = function ()
 {
 
@@ -11,7 +10,7 @@ module.exports = function ()
     //Muestra el método CRUL Listar que muestra todos los tipos de documentos
     router.get("/", function (req, res)
     {
-        TipDocModel.getTipDocs(function (error, data)
+        InmuebleModel.getInmuebles(function (error, data)
         {
             res.status(200).json(data);
         });
@@ -26,7 +25,7 @@ module.exports = function ()
         //solo actualizamos si la id es un número
         if (!isNaN(id))
         {
-            TipDocModel.getTipDoc(id, function (error, data)
+            InmuebleModel.getInmueble(id, function (error, data)
             {
                 //si el tipo de documento existe lo mostramos en formato json
                 if (typeof data !== 'undefined' && data.length > 0)
@@ -54,16 +53,21 @@ module.exports = function ()
     router.post("/", function (req, res)
     {
         //creamos un objeto Json con los datos del tipo de documento
-        var TipDocData =
+        var InmuebleData =
             {
-                IdtipoddeDocumento_TipodeDocumentos: null,
-                NombreTipodeDocumento_TipodeDocumentos: req.body.NombreTipodeDocumento_TipodeDocumentos,
-                InicialTipodeDocumento_TipodeDocumentos: req.body.InicialTipodeDocumento_TipodeDocumentos,
+                IdInmueble_Inmuebles: null,
+                IdTipoInmueble_Inmuebles: req.body.IdTipoInmueble_Inmuebles,
+                NombreInmueble_Inmuebles: req.body.NombreInmueble_Inmuebles,
+                Descripcion_Inmuebles: req.body.Descripcion_Inmuebles,
+                Direccion_Inmuebles: req.body.Direccion_Inmuebles,
+                Valor_Inmuebles: req.body.Valor_Inmuebles,
+                Estado_Inmuebles: req.body.Estado_Inmuebles,
+                FechaRegistro_Inmuebles:null,
             };
 
 
         //usamos la funcion para insertar
-        TipDocModel.insertTipDoc(TipDocData, function (error, data)
+        InmuebleModel.insertInmueble(InmuebleData, function (error, data)
         {
             //se muestra el mensaje correspondiente
             if (data)
@@ -72,7 +76,7 @@ module.exports = function ()
             }
             else
             {
-                res.status(500).send({ error: "boo:(" });
+                res.status(500).send({ error: "Error" });
             }
         });
     });
@@ -83,16 +87,22 @@ module.exports = function ()
     {
         //almacenamos los datos de la petición en un objeto
 
-        var TipDocData =
+        var InmuebleData =
             {
-                IdtipoddeDocumento_TipodeDocumentos: req.body.IdtipoddeDocumento_TipodeDocumentos,
-                NombreTipodeDocumento_TipodeDocumentos: req.body.NombreTipodeDocumento_TipodeDocumentos,
-                InicialTipodeDocumento_TipodeDocumentos: req.body.InicialTipodeDocumento_TipodeDocumentos,
+                IdInmueble_Inmuebles: req.body.IdInmueble_Inmuebles,
+                IdTipoInmueble_Inmuebles: req.body.IdTipoInmueble_Inmuebles,
+                NombreInmueble_Inmuebles: req.body.NombreInmueble_Inmuebles,
+                Descripcion_Inmuebles: req.body.Descripcion_Inmuebles,
+                Direccion_Inmuebles: req.body.Direccion_Inmuebles,
+                Valor_Inmuebles: req.body.Valor_Inmuebles,
+                Estado_Inmuebles: req.body.Estado_Inmuebles,
+                FechaRegistro_Inmuebles: req.body.FechaRegistro_Inmuebles,
+                
             };
 
 
         //usamos la funcion para actualizar
-        TipDocModel.updateTipDoc(TipDocData, function (error, data)
+        InmuebleModel.updateInmueble(InmuebleData, function (error, data)
         {
             //se muestra el mensaje correspondiente
             if (data && data.msg)
@@ -103,7 +113,7 @@ module.exports = function ()
             {
                 res.status(500).send(
                 { 
-                    error: "boo:(" 
+                    error: "Error " 
                 });
             }
         });

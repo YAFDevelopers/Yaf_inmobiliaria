@@ -46,7 +46,7 @@ CREATE TABLE `Agentes`
 	`Contraseña_Agentes` VARCHAR(50) NOT NULL,
 	`NumeroTelfono_Agentes` VARCHAR(50) NOT NULL,
 	`Estado_Agentes` VARCHAR(50) NOT NULL,
-	`FechaRegistro_Agentes` TIMESTAMP(4) DEFAULT CURRENT_TIMESTAMP,
+	`FechaRegistro_Agentes` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT `PK_Agente` PRIMARY KEY (`IdAgente_Agentes` ASC)
 )
 
@@ -92,7 +92,7 @@ CREATE TABLE `Inmuebles`
 	`IdInmueble_Inmuebles` INT NOT NULL AUTO_INCREMENT,
 	`IdTipoInmueble_Inmuebles` INT NOT NULL,
 	`NombreInmueble_Inmuebles` VARCHAR(50) NULL,
-	`Descripcon_Inmuebles` TEXT NULL,
+	`Descripcion_Inmuebles` TEXT NULL,
 	`Direccion_Inmuebles` VARCHAR(50) NULL,
 	`Valor_Inmuebles` VARCHAR(50) NULL,
 	`Estado_Inmuebles` VARCHAR(50) NULL,
@@ -115,7 +115,7 @@ CREATE TABLE `TipodeDocumentos`
 CREATE TABLE `TipoInmuebles`
 (
 	`IdTipoInmueble_TipoInmuebles` INT NOT NULL AUTO_INCREMENT,
-	`NombreTipoInmueble` VARCHAR(50) NOT NULL,
+	`NombreTipoInmueble_TipoInmuebles` VARCHAR(50) NOT NULL,
 	CONSTRAINT `PK_Table3` PRIMARY KEY (`IdTipoInmueble_TipoInmuebles` ASC)
 )
 
@@ -160,13 +160,13 @@ INSERT INTO `TipodeDocumentos` (`IdtipoddeDocumento_TipodeDocumentos`, `NombreTi
 INSERT INTO `TipodeDocumentos` (`IdtipoddeDocumento_TipodeDocumentos`, `NombreTipodeDocumento_TipodeDocumentos`, `InicialTipodeDocumento_TipodeDocumentos`) VALUES (NULL, 'Cédula de Extranjería.', 'CE');
 INSERT INTO `TipodeDocumentos` (`IdtipoddeDocumento_TipodeDocumentos`, `NombreTipodeDocumento_TipodeDocumentos`, `InicialTipodeDocumento_TipodeDocumentos`) VALUES (NULL, 'Número de Identificación Tributaria', 'NIT');
 
-INSERT INTO `TipoInmuebles` (`IdTipoInmueble_TipoInmuebles`, `NombreTipoInmueble`) VALUES (NULL, 'Apartamento');
-INSERT INTO `TipoInmuebles` (`IdTipoInmueble_TipoInmuebles`, `NombreTipoInmueble`) VALUES (NULL, 'Casa');
-INSERT INTO `TipoInmuebles` (`IdTipoInmueble_TipoInmuebles`, `NombreTipoInmueble`) VALUES (NULL, 'Finca');
+INSERT INTO `TipoInmuebles` (`IdTipoInmueble_TipoInmuebles`, `NombreTipoInmueble_TipoInmuebles`) VALUES (NULL, 'Apartamento');
+INSERT INTO `TipoInmuebles` (`IdTipoInmueble_TipoInmuebles`, `NombreTipoInmueble_TipoInmuebles`) VALUES (NULL, 'Casa');
+INSERT INTO `TipoInmuebles` (`IdTipoInmueble_TipoInmuebles`, `NombreTipoInmueble_TipoInmuebles`) VALUES (NULL, 'Finca');
 
-INSERT INTO `Inmuebles` (`IdInmueble_Inmuebles`, `IdTipoInmueble_Inmuebles`, `NombreInmueble_Inmuebles`, `Descripcon_Inmuebles`, `Direccion_Inmuebles`, `Valor_Inmuebles`, `Estado_Inmuebles`, `FechaRegistro_Inmuebles`) VALUES (NULL, '1', 'Conjunto Bella vista', 'Linda vista', 'Carrera 3 # 18- 45-Tprre B -apt 506', '54000000', 'ACTIVO', NULL);
-INSERT INTO `Inmuebles` (`IdInmueble_Inmuebles`, `IdTipoInmueble_Inmuebles`, `NombreInmueble_Inmuebles`, `Descripcon_Inmuebles`, `Direccion_Inmuebles`, `Valor_Inmuebles`, `Estado_Inmuebles`, `FechaRegistro_Inmuebles`) VALUES (NULL, '2', 'Casa grande', 'Es muy amplia', 'Carrera 7 # 84- 72', '120000000', 'ACTIVO', NULL);
-INSERT INTO `Inmuebles` (`IdInmueble_Inmuebles`, `IdTipoInmueble_Inmuebles`, `NombreInmueble_Inmuebles`, `Descripcon_Inmuebles`, `Direccion_Inmuebles`, `Valor_Inmuebles`, `Estado_Inmuebles`, `FechaRegistro_Inmuebles`) VALUES (NULL, '3', 'Finca La santurrona', 'Bien ubicada', 'vereda La Balsa', '550000000', 'ACTIVO', NULL);
+INSERT INTO `Inmuebles` (`IdInmueble_Inmuebles`, `IdTipoInmueble_Inmuebles`, `NombreInmueble_Inmuebles`, `Descripcion_Inmuebles`, `Direccion_Inmuebles`, `Valor_Inmuebles`, `Estado_Inmuebles`, `FechaRegistro_Inmuebles`) VALUES (NULL, '1', 'Conjunto Bella vista', 'Linda vista', 'Carrera 3 # 18- 45-Tprre B -apt 506', '54000000', 'ACTIVO', NULL);
+INSERT INTO `Inmuebles` (`IdInmueble_Inmuebles`, `IdTipoInmueble_Inmuebles`, `NombreInmueble_Inmuebles`, `Descripcion_Inmuebles`, `Direccion_Inmuebles`, `Valor_Inmuebles`, `Estado_Inmuebles`, `FechaRegistro_Inmuebles`) VALUES (NULL, '2', 'Casa grande', 'Es muy amplia', 'Carrera 7 # 84- 72', '120000000', 'ACTIVO', NULL);
+INSERT INTO `Inmuebles` (`IdInmueble_Inmuebles`, `IdTipoInmueble_Inmuebles`, `NombreInmueble_Inmuebles`, `Descripcion_Inmuebles`, `Direccion_Inmuebles`, `Valor_Inmuebles`, `Estado_Inmuebles`, `FechaRegistro_Inmuebles`) VALUES (NULL, '3', 'Finca La santurrona', 'Bien ubicada', 'vereda La Balsa', '550000000', 'ACTIVO', NULL);
 
 INSERT INTO `Clientes` (`IdCliente_Clientes`, `IdTipoDocumento_Clientes`, `NumeroDocuemto_Clientes`, `PrimerNombre_Clientes`, `SegundoNombre_Clientes`, `PrimerApellido_Clientes`, `SegundoApellido_Clientes`, `FechaNacimiento_Clientes`, `Correo_Clientes`, `Contraseña_Clientes` , `NumeroTelefono_Clientes`, `Estado_Clientes`, `FechaRegistro_Clientes`) VALUES (NULL, '1', '173481758732', 'Jorge', NULL, 'Camacho', NULL, '1970-01-16', 'camacho@gmail.com','1234', '3456789012', 'ACTIVO', NULL);
 INSERT INTO `Clientes` (`IdCliente_Clientes`, `IdTipoDocumento_Clientes`, `NumeroDocuemto_Clientes`, `PrimerNombre_Clientes`, `SegundoNombre_Clientes`, `PrimerApellido_Clientes`, `SegundoApellido_Clientes`, `FechaNacimiento_Clientes`, `Correo_Clientes`, `Contraseña_Clientes` , `NumeroTelefono_Clientes`, `Estado_Clientes`, `FechaRegistro_Clientes`) VALUES (NULL, '2', '65675475667', 'Jane', NULL, 'Smith', NULL, '1990-04-09', 'jane@gmail.com','1234', '3210987654', 'ACTIVO', NULL);

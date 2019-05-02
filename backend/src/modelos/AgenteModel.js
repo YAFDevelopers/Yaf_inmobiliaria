@@ -91,8 +91,8 @@ AgenteModel.updateAgente = function (AgenteData, callback)
                     + ", Correo_Agentes = " + connection.escape(AgenteData.Correo_Agentes)
                     + ", Contraseña_Agentes = " + connection.escape(AgenteData.Contraseña_Agentes)
                     + ", NumeroTelfono_Agentes = " + connection.escape(AgenteData.NumeroTelfono_Agentes)
-                    + ", Estado_Agentes = " + connection.escape(AgenteData.Estado_Agente)
-                    + ", FechaRegistro_Agentes = " + connection.escape(AgenteData.FechaRegistro_Agente)
+                    + ", Estado_Agentes = " + connection.escape(AgenteData.Estado_Agentes)
+                    + ", FechaRegistro_Agentes = " + connection.escape(AgenteData.FechaRegistro_Agentes)
                     + " WHERE  IdAgente_Agentes  =  " + connection.escape(AgenteData.IdAgente_Agentes)+";";
         connection.query(sql, function (error, result)
         {

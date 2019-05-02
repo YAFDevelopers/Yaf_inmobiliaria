@@ -1,4 +1,5 @@
-var InmuebleModel = require('../modelos/inmuebles');
+//obtenemos el modelo TipDocModel con toda la funcionalidad
+var TipInmuebleModel = require('../modelos/TipoinmuebleModel');
 var express = require('express');
 var router = express.Router();
 
@@ -10,7 +11,7 @@ module.exports = function ()
     //Muestra el método CRUL Listar que muestra todos los tipos de documentos
     router.get("/", function (req, res)
     {
-        InmuebleModel.getInmuebles(function (error, data)
+        TipInmuebleModel.getTipInmuebles(function (error, data)
         {
             res.status(200).json(data);
         });
@@ -25,7 +26,7 @@ module.exports = function ()
         //solo actualizamos si la id es un número
         if (!isNaN(id))
         {
-            InmuebleModel.getInmueble(id, function (error, data)
+            TipInmuebleModel.getTipInmueble(id, function (error, data)
             {
                 //si el tipo de documento existe lo mostramos en formato json
                 if (typeof data !== 'undefined' && data.length > 0)
@@ -53,21 +54,16 @@ module.exports = function ()
     router.post("/", function (req, res)
     {
         //creamos un objeto Json con los datos del tipo de documento
-        var InmuebleData =
+        var TipInmuebleData =
             {
-                IdInmueble_Inmuebles: null,
-                IdTipoInmueble_Inmuebles: req.body.IdTipoInmueble_Inmuebles,
-                NombreInmueble_Inmuebles: req.body.NombreInmueble_Inmuebles,
-                Descripcon_Inmuebles: req.body.Descripcon_Inmuebless,
-                Direccion_Inmuebles: req.body.Direccion_Inmuebles,
-                Valor_Inmuebles: req.body.Valor_Inmuebles,
-                Estado_Inmuebles: req.body.Estado_Inmuebles,
-                FechaRegistro_Inmuebles: req.body.FechaRegistro_Inmuebles,
+                IdTipoInmueble_TipoInmuebles: null,
+                NombreTipoInmueble_TipoInmuebles: req.body.NombreTipoInmueble_TipoInmuebles,
+               
             };
 
 
         //usamos la funcion para insertar
-        InmuebleModel.insertInmueble(InmuebleData, function (error, data)
+        TipInmuebleModel.insertTipInmueble(TipInmuebleData, function (error, data)
         {
             //se muestra el mensaje correspondiente
             if (data)
@@ -76,7 +72,7 @@ module.exports = function ()
             }
             else
             {
-                res.status(500).send({ error: "Error" });
+                res.status(500).send({ error: "boo:(" });
             }
         });
     });
@@ -87,22 +83,15 @@ module.exports = function ()
     {
         //almacenamos los datos de la petición en un objeto
 
-        var InmuebleData =
+        var TipInmuebleData =
             {
-                IdInmueble_Inmuebles: null,
-                IdTipoInmueble_Inmuebles: req.body.IdTipoInmueble_Inmuebles,
-                NombreInmueble_Inmuebles: req.body.NombreInmueble_Inmuebles,
-                Descripcon_Inmuebles: req.body.Descripcon_Inmuebless,
-                Direccion_Inmuebles: req.body.Direccion_Inmuebles,
-                Valor_Inmuebles: req.body.Valor_Inmuebles,
-                Estado_Inmuebles: req.body.Estado_Inmuebles,
-                FechaRegistro_Inmuebles: req.body.FechaRegistro_Inmuebles,
-                
+                IdTipoInmueble_TipoInmuebles: req.body.IdTipoInmueble_TipoInmuebles ,
+                NombreTipoInmueble_TipoInmuebles: req.body.NombreTipoInmueble_TipoInmuebles,
             };
 
 
         //usamos la funcion para actualizar
-        InmuebleModel.updateInmueble(InmuebleData, function (error, data)
+        TipInmuebleModel.updateTipInmueble (TipInmuebleData, function (error, data)
         {
             //se muestra el mensaje correspondiente
             if (data && data.msg)
@@ -113,7 +102,7 @@ module.exports = function ()
             {
                 res.status(500).send(
                 { 
-                    error: "Error " 
+                    error: "boo:(" 
                 });
             }
         });

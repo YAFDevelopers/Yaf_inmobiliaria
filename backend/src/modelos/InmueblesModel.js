@@ -84,7 +84,7 @@ inmuebleModel.updateInmueble = function (InmuebleData, callback)
     {
         var sql = "UPDATE Inmuebles SET IdTipoInmueble_Inmuebles = " + connection.escape(InmuebleData.IdTipoInmueble_Inmuebles)
                     + ",NombreInmueble_Inmuebles = " + connection.escape(InmuebleData.NombreInmueble_Inmuebles)
-                    + ",Descripcon_Inmuebles = " + connection.escape(InmuebleData.Descripcon_Inmuebles)
+                    + ",Descripcion_Inmuebles = " + connection.escape(InmuebleData.Descripcion_Inmuebles)
                     + ",Direccion_Inmuebles = " + connection.escape(InmuebleData.Direccion_Inmuebles)
                     + ",Valor_Inmuebles = " + connection.escape(InmuebleData.Valor_Inmuebles)
                     + ",Estado_Inmuebles = " + connection.escape(InmuebleData.Estado_Inmuebles)

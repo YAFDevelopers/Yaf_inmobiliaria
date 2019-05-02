@@ -4,12 +4,13 @@ var http = require('http');//protocolo de intercambio de archivos
 var path = require('path');//direccion
 
 
-var tipdoc = require('./src/rutas/tipdocruta');//ruta
-var cliente = require('./src/rutas/clienteruta');
-var inmueble = require('./src/rutas/inmuebles');
-var tipoinmueble = require('./src/rutas/tipoinmueblesrutas');
-var cita = require('./src/rutas/Citaruta');//ruta citas
-var agente = require('./src/rutas/Agenteruta');//ruta agentes
+var tipdoc = require('./src/rutas/TipdocRuta');//ruta
+var cliente = require('./src/rutas/ClienteRuta');
+var inmueble = require('./src/rutas/InmueblesRuta');
+var tipoinmueble = require('./src/rutas/TipoInmueblesRuta');
+var cita = require('./src/rutas/CitaRuta');//ruta citas
+var agente = require('./src/rutas/AgenteRuta');//ruta agentes
+var consulta = require('./src/rutas/ConsultaRuta');
 
 var app = express();//recibe un constructor
 
@@ -50,7 +51,7 @@ app.use(function (req, res, next)
   app.use('/tipoinmueble', tipoinmueble());//ruta para el servicio
   app.use('/agente', agente());//ruta para el servicio    
   app.use('/cita', cita());//ruta para el servicio 
-
+  app.use('/consulta',consulta());
 
 http.createServer(app).listen(app.get('port'), function ( )
 {
