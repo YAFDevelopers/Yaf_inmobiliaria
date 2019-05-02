@@ -20,15 +20,16 @@
                     <a href="index.html" class="logo">
                         <img src="imagenes/logo.svg" alt="Logo">
                     </a>
-                    <button type="button" class="boton_buscar" data-toggle="collapse" data-target="#bloque_buscar" aria-expanded="false">
+                   <button type="button" class="boton_buscar" data-toggle="collapse" data-target="#bloque_buscar" aria-expanded="false">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="boton_menu" data-toggle="collapse" data-target="#menu_principal" aria-expanded="false">
+                    
+                    <button type="button" class="boton_menu d-md-none" data-toggle="collapse" data-target="#menu_principal" aria-expanded="false">
                         <i class="fa fa-th-list" aria-hidden="true"></i>
                     </button>      
                     <form action="#" id="bloque_buscar" class="collapse">
                         <div class="contenedor-bloque_buscar">
-                            <input type=" text" placeholder="Buscar...">
+                            <input type=" text" placeholder="Buscar..." >
                             <input type="submit" value="Buscar">
                         </div>
                     </form>
@@ -59,9 +60,9 @@
         </section>
         <section class="presentacion " id="presentacion">
             <div class="container">
-               <a ><h2 class="display-3">¿Quienes somos? </h2></a> 
+               <a ><h2 class="display-3 text-md-left">¿Quienes somos? </h2></a> 
                  <div class="row">
-                     <div class="col-xs-12">
+                     <div class="col-xs-12 col-md-8">
                         <p>
                             Yaf es una empresa que se encarga de buscar por ti, ayudandote con varios de nuestros 
                             servicios como el amplio catalogo de inmubles que tenemos donde podras encontrar desde 
@@ -73,8 +74,8 @@
                             la mejor opcion 
                         </p> 
                     </div>       
-                    <div class="col-md-12"> 
-                            <img src="imagenes/presentacion.svg" alt="yaf">                       
+                    <div class="col-xs-12 col-md-4"> 
+                            <img src="imagenes/familia.svg" alt="yaf">                       
                     </div>   
                 </div>
             </div>
@@ -124,15 +125,53 @@
                     <h4>Creacion de citas</h4>
                 </li>       
                 </ul>
+                </body>
         </section>
-        <footer class="pie-de-pag" role="contentinfo">
-            <p>Desarrollado por yaf 2019</p>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">youtube</a></li>
-                <li><a href="#">pagina</a></li>
-            </ul>
-
+        <!-- quienes somos-->
+        <section>
+            		
+		<div class="container">
+			<h1 id="who">Conoce un poco mas de nosotros</h1>
+			<hr class="my-4">
+			<h4 class="center-text">Fundadores</h4>
+			<div class="row">
+				<div class="col-md-4 ">
+					<div class="center">
+						<img class="img-fun " src="imagenes/Fonseca.jpg">
+						<div class="text-img">
+							<p class="center-text">Sebastian Fonseca<br>(Diseñador)</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="center">
+						<img class="img-fun " src="imagenes/Alejandro.jpg">
+						<div class="text-img">
+							<p class="center-text">Camilo Buitrago<br>(Programador)</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="center">
+						<img class="img-fun " src="imagenes/yo.jpg">
+						<div class="text-img">
+							<p class="center-text">Yeisson Jimenez<br>(Desarrollador)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="center-text">Somos un grupo de estudiantes de ingeniería de sistemas de Colombia que se reunió para formar un eficiente equipo de trabajo con el objetivo de ser el grupo mas sobresaliente, después de el éxito que se tuvo se decidió fundar YAF como un desafío de aprendizaje y de exponer nuestros trabajos al mundo y hacer crecer mas este proyecto. </p>
+		</div>
+        </section>
+        <footer class="piedepag " role="contentinfo">
+            <div class="container">
+                <p>Desarrollado por yaf 2019</p>
+                <ul class="redes">
+                    <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-ils" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
         </footer>
         <!--Archivos js-->
         <script src="js/jquery.min.js"></script>

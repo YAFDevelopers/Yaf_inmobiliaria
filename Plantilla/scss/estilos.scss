@@ -18,7 +18,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 .encabezado {
     background: #ffff;
     color: #fff;
@@ -142,7 +141,15 @@ body {
     background: $principal;
     color: #fff;
 }
-
+.img-fun
+			{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				justify-content:center;
+				float: left;
+				margin-bottom: 50px;
+            }
 
 @keyframes flecha_bajar {
     from {
@@ -155,3 +162,99 @@ body {
         transform: translateY(0);
     }
 }
+
+/*Pie de pagina*/
+.piedepag {
+    background: #111111;
+    color: #fff;
+    text-align: center;
+    font-size: .9rem;
+}
+.piedepag  .redes   {
+    display: flex;
+    justify-content: center;
+    list-style:none ;
+    margin: 0;
+    padding: 0;
+}
+.piedepag  .redes a  {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+@media(min-width:768px) {
+
+    #menu_principal {
+        height: auto !important;
+        display: block;
+        flex: 0 1 auto;
+        margin-left: auto;
+    }
+   
+    #menu_principal ul {
+        display: flex;
+        margin: 0 0 0 0;
+    }
+    #menu_principal ul li a{
+        padding: .8rem;
+        margin: 0 .3rem;
+        border-top: 0px;
+        text-transform: capitalize;
+        border-bottom: 4px solid transparent;
+        transition: all .5s ease;
+    }
+    #menu_principal ul li.active a,
+    #menu_principal ul li a:hover{
+        color: $principal;
+        border-bottom: 4px solid;
+    }
+    .boton_buscar   {
+        margin-left: 1rem;
+        margin-right: 0;
+        order:2;
+    }
+    #bloque_buscar {
+        order: 3;
+        position: absolute;
+        width: 20rem;
+        right: 1rem;
+        top: 2.8rem;
+    }
+}  
+
+/*
+------------------------------------ Estilo de agendaa ---------------------------------------------------------
+*/
+.Cuadro_lateral_izquierdo {
+    background: $principal;
+    color: #fff;
+    text-align: center;
+}
+
+.Cuadro_lateral_izquierdo .Icon_agenda a {
+    color: #fff;
+    font-size: 12rem;
+    margin: 0 1rem;
+   
+}
+.Cuadro_lateral_izquierdo .Icon_agenda  {
+    text-align: center;
+}
+.Cuadro_lateral_izquierdo  .consulta  {
+   background-color: transparent;
+   color: $secundario;
+   font-size: 3rem;
+   border: transparent;
+}
+.Cuadro_lateral_izquierdo  .consulta  {
+    background-color: transparent;
+    color: $secundario;
+    font-size: 3rem;
+    border: transparent;
+ }
+.Cuadro_lateral_izquierdo  .Agendar  {
+    background-color: transparent;
+    color: $secundario;
+    font-size: 3rem;
+    border: transparent;
+ }
