@@ -10,9 +10,8 @@ var inmueble = require('./src/rutas/InmueblesRuta');
 var tipoinmueble = require('./src/rutas/TipoInmueblesRuta');
 var cita = require('./src/rutas/CitaRuta');//ruta citas
 var agente = require('./src/rutas/AgenteRuta');//ruta agentes
-var consulta1 = require('./src/rutas/ConsultaRuta1');
-var consulta2 = require('./src/rutas/ConsultaRuta2');
-var consulta3 = require('./src/rutas/ConsultaRuta3');
+var consulta = require('./src/rutas/ConsultaRuta');
+
 
 
 
@@ -55,9 +54,8 @@ app.use(function (req, res, next)
   app.use('/tipoinmueble', tipoinmueble());//ruta para el servicio
   app.use('/agente', agente());//ruta para el servicio    
   app.use('/cita', cita());//ruta para el servicio 
-  app.use('/consulta1',consulta1());
-  app.use('/consulta2',consulta2());
-  app.use('/consulta3',consulta3());
+  app.use('/consulta',consulta());
+ 
 
 
 
