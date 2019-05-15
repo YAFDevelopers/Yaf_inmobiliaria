@@ -262,7 +262,8 @@ body {
 .Cuadro_lateral_izquierdo {
   background: #7F0912;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  padding: 15px; }
 
 .Cuadro_lateral_izquierdo .Icon_agenda a {
   color: #fff;
@@ -273,21 +274,9 @@ body {
   text-align: center; }
 
 .Cuadro_lateral_izquierdo .consulta {
-  background-color: transparent;
-  color: #009500;
-  font-size: 3rem;
-  border: transparent; }
-
-.Cuadro_lateral_izquierdo .consulta {
-  background-color: transparent;
-  color: #009500;
-  font-size: 3rem;
-  border: transparent; }
-
-.Cuadro_lateral_izquierdo .Agendar {
-  background-color: transparent;
-  color: #009500;
-  font-size: 3rem;
-  border: transparent; }
+  background: #009500;
+  color: #fff;
+  border: #009500;
+  font-size: 2rem; }
 
 /*# sourceMappingURL=estilos.css.map */
