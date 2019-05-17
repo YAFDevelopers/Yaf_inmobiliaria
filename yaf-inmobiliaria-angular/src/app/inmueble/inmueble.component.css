@@ -1,0 +1,89 @@
+
+.divAdd{
+    width: 100%;
+    height: 50px;
+}
+.red{
+    background-color: red;
+}
+
+.cards{
+    padding: auto;
+    width: auto;
+    overflow: auto;
+}
+.flex-container{
+    
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 10px auto;
+    padding: 0px;
+}
+.flex-item{
+   margin:15px 0px; 
+}
+.card{
+    width: 300px;
+    border-radius: 20px;
+    border-color: #E6E6E6;
+    box-shadow: 2px 3px 5px -2px rgba(0,0,0,0.75);
+}
+.angendar{
+    float: right;
+    background-color: #7F2013;
+}
+.cardHeader{
+    background-color: #7F2013; 
+    border-top-right-radius: 20px !important; 
+    border-top-left-radius: 20px !important;
+}
+.Title{
+    color:white
+}
+.modalText{
+    text-align: justify;
+}
+.primayColor{
+    background-color: #7F2013; 
+}
+
+
+
+/*=============================================
+ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+=============================================*/
+
+@media (min-width:1200px){
+    .search{
+        position: fixed;
+        width: auto;
+    }
+    .test{
+        border-right: solid 2px black;
+        
+    }
+}
+/*=============================================
+ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
+=============================================*/
+
+@media (max-width:1199px) and (min-width:992px){
+    .search{
+        position: relative;
+        width: auto;
+    }
+}
+
+/*=============================================
+ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
+=============================================*/
+
+@media (max-width:991px) and (min-width:768px){}
+
+/*=============================================
+MOVIL (XS revisamos en 320px)
+=============================================*/
+
+@media (max-width:767px){}
