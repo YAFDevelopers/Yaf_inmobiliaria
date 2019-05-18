@@ -1,0 +1,170 @@
+html {
+    font-size: 15px; }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    color: #111111; }
+  
+  .bienvenidos {
+    background: url("../../assets/image/casa_a.gif") no-repeat center top;
+    color: #fff;
+    background-size: cover;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  
+  
+  
+  /*encabezado texto principal*/
+  .texto-encabezado {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  
+  .texto-encabezado .display-4 {
+    text-align: center;
+    margin-top: 6rem; }
+  
+  .texto-encabezado .container {
+    height: 200px; }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #7F0912;
+    border-color: transparent;
+    margin-top: 1rem;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; }
+  
+  .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #009500;
+    border-color: transparent; }
+  
+  .div-flecha_bajar {
+    text-align: center; }
+  
+  .div-flecha_bajar a {
+    display: inline-block;
+    color: #7F0912;
+    font-size: 5rem;
+    -webkit-animation: flecha_bajar 1s ease-in-out infinite;
+            animation: flecha_bajar 1s ease-in-out infinite; }
+  
+  .presentacion .container .display-3 {
+    text-align: center; }
+  
+  .presentacion {
+    background: #7F0912;
+    color: #fff; }
+  
+  .img-fun {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    float: left;
+    margin-bottom: 50px; }
+  
+  @-webkit-keyframes flecha_bajar {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
+    50% {
+      -webkit-transform: translateY(6px);
+              transform: translateY(6px); }
+    to {
+      -webkit-transform: translateY(0);
+              transform: translateY(0); } }
+  
+  @keyframes flecha_bajar {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
+    50% {
+      -webkit-transform: translateY(6px);
+              transform: translateY(6px); }
+    to {
+      -webkit-transform: translateY(0);
+              transform: translateY(0); } }
+  /*Pie de pagina*/
+  .piedepag {
+    background: #111111;
+    color: #fff;
+    text-align: center;
+    font-size: .9rem; }
+  
+  .piedepag .redes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  
+  .piedepag .redes a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 1rem; }
+  
+  @media (min-width: 768px) {
+    #menu_principal {
+      height: auto !important;
+      display: block;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 auto;
+              flex: 0 1 auto;
+      margin-left: auto; }
+  
+    #menu_principal ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0 0 0 0; }
+  
+    #menu_principal ul li a {
+      padding: .8rem;
+      margin: 0 .3rem;
+      border-top: 0px;
+      text-transform: capitalize;
+      border-bottom: 4px solid transparent;
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease; }
+  
+    #menu_principal ul li.active a,
+    #menu_principal ul li a:hover {
+      color: #7F0912;
+      border-bottom: 4px solid; }
+  
+    .boton_buscar {
+      margin-left: 1rem;
+      margin-right: 0;
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2; }
+  
+    #bloque_buscar {
+      -webkit-box-ordinal-group: 4;
+          -ms-flex-order: 3;
+              order: 3;
+      position: absolute;
+      width: 20rem;
+      right: 1rem;
+      top: 2.8rem; } }
