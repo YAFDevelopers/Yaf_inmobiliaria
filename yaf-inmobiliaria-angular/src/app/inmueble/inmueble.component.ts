@@ -12,4 +12,5 @@ export class InmuebleComponent implements OnInit {
   ngOnInit() {
   }
 
+  
 }
