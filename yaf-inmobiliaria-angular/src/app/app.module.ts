@@ -9,6 +9,8 @@ import { AgenteComponent } from './agente/agente.component';
 import { CitasComponent } from './citas/citas.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import { TipDocsComponent } from './tip-docs/tip-docs.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TipDocsComponent } from './tip-docs/tip-docs.component';
     AgenteComponent,
     CitasComponent,
     InmuebleComponent,
-    TipDocsComponent
+    TipDocsComponent,
+    InicioComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

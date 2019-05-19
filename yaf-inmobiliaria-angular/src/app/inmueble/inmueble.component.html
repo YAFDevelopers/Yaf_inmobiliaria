@@ -1,184 +1,87 @@
-<div class="container-fluid">
-  <div class="divAdd">
-    <button class="btn btn-danger angendar" data-toggle="modal" data-target="#agregar">Agregar <i class="fas fa-home"></i></button>
-  </div>
-  <!--  ///////////////////////////////////////////////////////////////////////////////////////
-        Modal Agregar
-        ////////////////////////////////////////////////////////////////////////////////////// -->
-        <div class="modal fade" id="agregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header primayColor">
-              <h5 class="modal-title Title" id="exampleModalLabel">Agregar</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <input type="hidden" name="IdInmueble" value="">
-                <div class="form-group">
-                  <label for="tipInmueble" class="col-form-label">Tipo de inmueble:</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><i class="fas fa-home"></i></div>
-                    </div>
-                    <select class="custom-select" id="tipInmueble">
-                      <option selected>Choose...</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="nombreInmueble" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" name="nombreInmueble" id="">
-                </div>
-                <div class="form-group">
-                  <label for="descripccionInmueble">Descrpccion</label>
-                  <textarea class="form-control" id="descripccionInmueble" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="direcionInmueble" class="col-form-label">Direción:</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><i class="fas fa-map-marked-alt"></i></div>
-                    </div>
-                    <input type="text" class="form-control" name="direcionInmueble" id="">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="valorInmueble" class="col-form-label">Valor:</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">$</div>
-                    </div>
-                    <input type="number" class="form-control" name="valorInmueble" id="">
-                  </div>
-                </div>
-                
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary primayColor">Guardar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-  <div class="row">
-    <!--  ///////////////////////////////////////////////////////////////////////////////////////
-        COLUMNA BUSCAR 
-        ////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="col-xl-4 col-md-12 test ">
-      <div class="search">
-        <h2>Buscar</h2>
-        <form class="form-inline">
-          <div class="form-group mx-sm-3 mb-2">
-            <input type="text" class="form-control" id="idInmueble" placeholder="Id Inmuelbe">
-          </div>
-          <button class="btn btn-primary mb-2"><i class="fas fa-search"></i></button>
-        </form>
-        <div class="card">
-          <div class="card-header cardHeader">
-            <h5 class="card-title Title">Apartamento Silicon Valley</h5>
-          </div>
-          <img src="./Imagenes/01.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <div>
-              <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                Street, San Jose, CA 95134</span><br>
-              <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-            </div>
-            <br>
-            <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizarBusqueda">
-              <i class="fas fa-pen"></i> Actualizar
-            </button>
-          </div>
-        </div>
-      </div>
-      <!--  ///////////////////////////////////////////////////////////////////////////////////////
-        Modal Actualizar
-        ////////////////////////////////////////////////////////////////////////////////////// -->
-      <div class="modal fade" id="actualizarBusqueda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header primayColor">
-              <h5 class="modal-title Title" id="exampleModalLabel">Actualizar</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <input type="hidden" name="IdInmueble" value="">
-                <div class="form-group">
-                  <label for="tipInmueble" class="col-form-label">Tipo de inmueble:</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><i class="fas fa-home"></i></div>
-                    </div>
-                    <select class="custom-select" id="tipInmueble">
-                      <option selected>Choose...</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="nombreInmueble" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" name="nombreInmueble" id="">
-                </div>
-                <div class="form-group">
-                  <label for="descripccionInmueble">Descrpccion</label>
-                  <textarea class="form-control" id="descripccionInmueble" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="direcionInmueble" class="col-form-label">Direción:</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><i class="fas fa-map-marked-alt"></i></div>
-                    </div>
-                    <input type="text" class="form-control" name="direcionInmueble" id="">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="valorInmueble" class="col-form-label">Valor:</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">$</div>
-                    </div>
-                    <input type="number" class="form-control" name="valorInmueble" id="">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="estadoInmueble" class="col-form-label">Estado:</label>
-                  <select class="custom-select" id="estadoInmueble">
-                    <option selected>Choose...</option>
-                    <option value="1">Activo</option>
-                    <option value="2">Inactivo</option>
-                  </select>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary primayColor">Guardar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+<div class="cuerpo" id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-none d-lg-block">
+        <a href="#">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        </a>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#crearInmueble">Crear</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#listar">Listar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#buscar">Buscar</a>
+        </li>
+      </ul>
     </div>
-    <!--  ///////////////////////////////////////////////////////////////////////////////////////
-        COLUMNA Inmuebles 
-        ////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="col-xl-8 col-md-12">
-      <h2>Lista de inmuebles</h2>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5  " id="crearInmueble">
+      <h3>Crear</h3>
+      <br>
+      <form>
+        <input type="hidden" name="IdInmueble" value="">
+        <div class="form-group">
+          <label for="tipInmueble" class="col-form-label">Tipo de inmueble:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-home"></i></div>
+            </div>
+            <select class="custom-select" id="tipInmueble">
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nombreInmueble" class="col-form-label">Nombre:</label>
+          <input type="text" class="form-control" name="nombreInmueble" id="">
+        </div>
+        <div class="form-group">
+          <label for="descripccionInmueble">Descrpccion</label>
+          <textarea class="form-control" id="descripccionInmueble" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="direcionInmueble" class="col-form-label">Direción:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-map-marked-alt"></i></div>
+            </div>
+            <input type="text" class="form-control" name="direcionInmueble" id="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="valorInmueble" class="col-form-label">Valor:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+            </div>
+            <input type="number" class="form-control" name="valorInmueble" id="">
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-primary primayColor">Guardar</button>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5" id="listar">
+      <h3>Listar</h3>
+      <br>
       <div class="container-fluid cards">
         <ul class="flex-container">
           <li class="flex-item">
@@ -200,8 +103,8 @@
               </div>
             </div>
             <!--  ///////////////////////////////////////////////////////////////////////////////////////
-        Modal Actualizar
-        ////////////////////////////////////////////////////////////////////////////////////// -->
+            Modal Actualizar
+            ////////////////////////////////////////////////////////////////////////////////////// -->
             <div class="modal fade" id="actualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -274,126 +177,23 @@
               </div>
             </div>
           </li>
-          <!-- //////////////////////////////////////////////////////////////////////////////////////
-            EXAMPLES
-            \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-          <li class="flex-item">
-            <div class="card">
-              <div class="card-header cardHeader">
-                <h5 class="card-title Title">Apartamento Silicon Valley</h5>
-              </div>
-              <img src="./Imagenes/01.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <div>
-                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                    Street, San Jose, CA 95134</span><br>
-                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-                </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="card">
-              <div class="card-header cardHeader">
-                <h5 class="card-title Title">Apartamento Silicon Valley</h5>
-              </div>
-              <img src="./Imagenes/01.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <div>
-                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                    Street, San Jose, CA 95134</span><br>
-                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-                </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="card">
-              <div class="card-header cardHeader">
-                <h5 class="card-title Title">Apartamento Silicon Valley</h5>
-              </div>
-              <img src="./Imagenes/01.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <div>
-                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                    Street, San Jose, CA 95134</span><br>
-                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-                </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="card">
-              <div class="card-header cardHeader">
-                <h5 class="card-title Title">Apartamento Silicon Valley</h5>
-              </div>
-              <img src="./Imagenes/01.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <div>
-                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                    Street, San Jose, CA 95134</span><br>
-                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-                </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="card">
-              <div class="card-header cardHeader">
-                <h5 class="card-title Title">Apartamento Silicon Valley</h5>
-              </div>
-              <img src="./Imagenes/01.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <div>
-                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                    Street, San Jose, CA 95134</span><br>
-                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-                </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="card">
-              <div class="card-header cardHeader">
-                <h5 class="card-title Title">Apartamento Silicon Valley</h5>
-              </div>
-              <img src="./Imagenes/01.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <div>
-                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                    Street, San Jose, CA 95134</span><br>
-                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-                </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
-              </div>
-            </div>
-          </li>
 
         </ul>
       </div>
-    </div>
+
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5" id="buscar">
+      <h3>Buscar</h3>
+      <br>
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="idInmueble" placeholder="Id Inmuelbe">
+        </div>
+        <button class="btn btn-primary mb-2 primayColor"><i class="fas fa-search"></i></button>
+      </form>
+    </section>
   </div>
 </div>
