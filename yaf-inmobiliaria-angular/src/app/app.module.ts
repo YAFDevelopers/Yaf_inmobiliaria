@@ -12,6 +12,7 @@ import { TipDocsComponent } from './tip-docs/tip-docs.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FooterComponent } from './footer/footer.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
+import { InformesComponent } from './informes/informes.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AyudaComponent } from './ayuda/ayuda.component';
     TipDocsComponent,
     InicioComponent,
     FooterComponent,
-    AyudaComponent
+    AyudaComponent,
+    InformesComponent
   ],
   imports: [
     BrowserModule,

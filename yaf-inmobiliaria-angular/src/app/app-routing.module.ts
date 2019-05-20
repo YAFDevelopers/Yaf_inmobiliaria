@@ -5,6 +5,8 @@ import { CitasComponent } from './citas/citas.component';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import {AyudaComponent} from './ayuda/ayuda.component';
 import{AgenteComponent} from './agente/agente.component';
+import {ClienteComponent} from './cliente/cliente.component';
+import {InformesComponent} from './informes/informes.component'; 
 
 const routes: Routes = [
   {
@@ -14,7 +16,7 @@ const routes: Routes = [
   {
     path:'', 
     component:InicioComponent
-  },
+  },   
     {
       path:'citas',
       component:CitasComponent
@@ -26,6 +28,14 @@ const routes: Routes = [
     {
       path:'agente',
       component:AgenteComponent
+    },
+    {
+      path:'cliente',
+      component:ClienteComponent
+    },
+    {
+      path:'informes',
+      component:InformesComponent
     }
 ];
 
