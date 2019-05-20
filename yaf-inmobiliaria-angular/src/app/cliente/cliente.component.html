@@ -1,3 +1,257 @@
-<p>
-  cliente works!
-</p>
+<div class="cuerpo" id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-none d-lg-block">
+        <a href="#">
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        </a>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="clientes#Crear">Crear</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="clientes#modificar">Modificar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="clientes#listar">Listar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="clientes#buscar">Buscar</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0" id="Crear">
+    <h4>Crear Cliente</h4>
+    <div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-signature"></i></span>
+      </div>
+      <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre"></textarea>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-signature"></i></span>
+      </div>
+      <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre"></textarea>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+      </div>
+      <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido"></textarea>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+      </div>
+      <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"></textarea>
+    </div>
+    <div class="input-group-prepend input-group">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de Documento</button>
+          <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Cedula de ciudadania</a>
+          <a class="dropdown-item" href="#">Cedula de extrangeria</a>
+          <a class="dropdown-item" href="#">Numero de identificación tributaria</a>
+          <div role="separator" class="dropdown-divider"></div>
+        </div>
+        <input type="number" class="form-control">
+    </div>
+    <div class="input-group-prepend input-group">
+      <label for="FechaNacimiento">Fecha de Nacimiento</label>
+      <p> </p>
+      <input type="date" id="FechaNacimiento">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+      </div>
+      <input type="email" class="form-control" placeholder="Email" required>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+      </div>
+      <input type="password" class="form-control" placeholder="Contraseña" required>
+    </div>
+    <div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-phone-square"></i>></span>
+      </div>
+      <input type="password" class="form-control" placeholder="Numero de Telefono" required>
+    </div>
+    <div class="input-group">                                        
+      <label for="exampleInputEmail1">Estado Clientes</label><br/>
+      <select class="selectpicker" data-live-search="true">
+      <option data-tokens="ketchup mustard">Activo</option>
+      <option data-tokens="mustard">In Activo</option>
+      </select>                                        
+     </div>
+     <button type="button" class="btn btn-primary">Crear</button>  
+    </div>
+
+    <div id="modificar">
+        <h4>Modificar Cliente</h4>
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-signature"></i></span>
+            </div>
+            <textarea class="form-control" aria-label="PrimerNombre" placeholder="id"></textarea>
+          </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-signature"></i></span>
+          </div>
+          <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre"></textarea>
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-signature"></i></span>
+          </div>
+          <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre"></textarea>
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+          </div>
+          <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido"></textarea>
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+          </div>
+          <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"></textarea>
+        </div>
+        <div class="input-group">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de Documento</button>
+              <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Cedula de ciudadania</a>
+              <a class="dropdown-item" href="#">Cedula de extrangeria</a>
+              <a class="dropdown-item" href="#">Numero de identificación tributaria</a>
+              <div role="separator" class="dropdown-divider"></div>
+            </div>
+            <input type="number" class="form-control">
+        </div>
+        <div class="input-group">
+          <label for="FechaNacimiento">Fecha de Nacimiento:</label>
+          <input type="date" id="FechaNacimiento">
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+          </div>
+          <input type="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+          </div>
+          <input type="password" class="form-control" placeholder="Contraseña" required>
+        </div>
+        <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-phone-square"></i></span>
+          </div>
+          <input type="password" class="form-control" placeholder="Numero de Telefono" required>
+        </div>
+        <div class="input-group">                                        
+          <label for="exampleInputEmail1">Estado Clientes</label><br/>
+          <select class="selectpicker" data-live-search="true">
+          <option data-tokens="ketchup mustard">Activo</option>
+          <option data-tokens="mustard">In Activo</option>
+          </select>                                      
+         </div>
+         <button type="button" class="btn btn-primary">Actualizar</button>    
+        </div>
+    <h4>Listar Clientes</h4>
+    <div class="container table-container" id="listar">
+      <button type="button" class="btn btn-primary">Listar Clientes</button> 
+      <table class="table table-dark table-fixed">
+          <thead>
+            <tr>
+              <th scope="col">Tipo de Documento</th>
+              <th scope="col">Numero de Documento</th>
+              <th scope="col">Primer Nombre</th>
+              <th scope="col">Segundo Nombre</th>
+              <th scope="col">Primer Apellido</th>
+              <th scope="col">Segundo Apellido</th>
+              <th scope="col">Fecha de Nacimiento</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Contraseña</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Fecha de Registro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">Cedula de ciudadania</th>
+              <th scope="col">1075489657</th>
+              <th scope="col">Camilo</th>
+              <th scope="col">Alejandro</th>
+              <th scope="col">Buitrago</th>
+              <th scope="col">Baquero</th>
+              <th scope="col">1998-30-10</th>
+              <th scope="col">Baquero1030@gmail.com</th>
+              <th scope="col">*****</th>
+              <th scope="col">3202711733</th>
+              <th scope="col">Activo</th>
+              <th scope="col">2019-10-13</th>
+            </tr>
+
+          </tbody>
+        </table>
+    </div>
+    <div class="container table-container" id="buscar">
+      <h4>Buscar Cliente</h4>
+      <input type="text" placeholder="id">
+      <button type="button" class="btn btn-primary">Buscar</button> 
+        <table class="table table-dark table-fixed">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tipo de Documento</th>
+                <th scope="col">Numero de Documento</th>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Fecha de Registro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">1</th>
+                <th scope="col">Cedula de ciudadania</th>
+                <th scope="col">1075489657</th>
+                <th scope="col">Camilo</th>
+                <th scope="col">Alejandro</th>
+                <th scope="col">Buitrago</th>
+                <th scope="col">Baquero</th>
+                <th scope="col">1998-30-10</th>
+                <th scope="col">Baquero1030@gmail.com</th>
+                <th scope="col">*****</th>
+                <th scope="col">3202711733</th>
+                <th scope="col">Activo</th>
+                <th scope="col">2019-10-13</th>
+              </tr>
+    
+            </tbody>
+          </table>
+    </div>
+    
+  </div>
+</div>
