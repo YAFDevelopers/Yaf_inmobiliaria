@@ -11,6 +11,7 @@ import { InmuebleComponent } from './inmueble/inmueble.component';
 import { TipDocsComponent } from './tip-docs/tip-docs.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FooterComponent } from './footer/footer.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     InmuebleComponent,
     TipDocsComponent,
     InicioComponent,
-    FooterComponent
+    FooterComponent,
+    AyudaComponent
   ],
   imports: [
     BrowserModule,
