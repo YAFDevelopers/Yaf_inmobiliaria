@@ -1,3 +1,32 @@
-<p>
-  menu-inico works!
-</p>
+ <header class="encabezado navbar navbar-expand-lg navbar-light bg-light " role="banner">
+                <div class="container">
+                    <a href="index.html" class="logo">
+                        <img src="../../assets/image/logo.svg" alt="Logo">
+                    </a>
+                   <!-- <button type="button" class="boton_buscar" data-toggle="collapse" data-target="#bloque_buscar" aria-expanded="false">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button> -->
+                    
+                    <button type="button" class="boton_menu d-md-none" data-toggle="collapse" data-target="#menu_principal" aria-expanded="false">
+                        <i class="fa fa-th-list" aria-hidden="true"></i>
+                    </button>      
+                    <!-- <form action="#" id="bloque_buscar" class="collapse">
+                        <div class="contenedor-bloque_buscar">
+                            <input type=" text" placeholder="Buscar..." >
+                            <input type="submit" value="Buscar">
+                        </div>
+                    </form> -->
+                    <nav id="menu_principal" class="collapse">
+                        <ul>
+                            <li class="activo"><a routerLink="">Inicio</a></li>
+                            <li><a routerLink="citas">Citas</a></li>
+                            <li><a routerLink="agente">Agentes</a></li>
+                            <li><a routerLink="cliente">cliente</a></li>
+                            <li><a routerLink="inmuebles">inmuebles</a></li>
+                            <li><a routerLink="informes">informes</a></li>
+                            <li><a href="#who">contacto</a></li>
+                            <li><a routerLink="ayuda">Ayuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
