@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {HttpClientModule} from '@angular/common/http';
+
+import {FormsModule} from '@angular/forms'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuInicoComponent } from './menu-inico/menu-inico.component';
@@ -13,6 +17,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { FooterComponent } from './footer/footer.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { InformesComponent } from './informes/informes.component';
+
+import {ServicioYafService} from './servicio-yaf.service';
+
 
 @NgModule({
   declarations: [
@@ -30,9 +37,13 @@ import { InformesComponent } from './informes/informes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ServicioYafService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
