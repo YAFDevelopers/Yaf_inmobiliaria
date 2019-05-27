@@ -211,7 +211,8 @@ input[type=number] { -moz-appearance:textfield; }
     padding: auto;
     width: auto;
     height: 720px;
-    overflow: scroll;
+    overflow: auto;
+    box-shadow: inset 7px 7px 14px -8px rgba(0,0,0,0.75);
 }
 
 .flex-container {
@@ -278,9 +279,16 @@ input[type=number] { -moz-appearance:textfield; }
   text-align: center;
   color: white;
 }
-
+.containerBusqueda .titulo button{
+    margin: 0px;
+    text-align: center;
+    color: black;
+    float: right;
+    border-radius: 0px;
+    border-top-right-radius: 18px !important;
+  }
 .containerBusqueda .pie{
-  border-bottom-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
     border-bottom-left-radius: 20px !important;
     background-color: #7F2013;
     width: 100%;
@@ -294,6 +302,9 @@ input[type=number] { -moz-appearance:textfield; }
 
 .containerBusqueda .rigth{
     text-align: right;
-    margin:40px -30px;
+    margin:0px -30px;
+}
+.texto{
+    overflow:auto ;
 }
 

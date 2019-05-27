@@ -87,7 +87,7 @@
     </section>
 
     <hr class="m-0">
-    
+
     <!--// ////////////////////////////////////////////////////// \\
           //             LISTAR Y ACTUALIZAR INMUEBLE              \\
           // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
@@ -99,7 +99,8 @@
           <li class="flex-item" *ngFor="let inmueble of inmuebles">
             <div class="card">
               <div class="card-header cardHeader">
-                <h5 class="card-title Title">{{inmueble.NombreInmueble_Inmuebles}}</h5>
+                <h5 class="card-title Title">{{inmueble.IdInmueble_Inmuebles}}. {{inmueble.NombreInmueble_Inmuebles}}
+                </h5>
               </div>
               <img [attr.src]="'../../assets/image/'+ inmueble.IdTipoInmueble_Inmuebles + '.jpeg'" class="card-img-top"
                 alt="...">
@@ -114,11 +115,6 @@
                   <span class="badge badge-danger" *ngIf="inmueble.Estado_Inmuebles =='INACTIVO'">
                     {{inmueble.Estado_Inmuebles}}</span>
                 </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar"
-                  (click)="obtenerInmuebleActualizar(inmueble.IdInmueble_Inmuebles)">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
               </div>
             </div>
           </li>
@@ -224,6 +220,9 @@
       </form>
       <div class="container containerBusqueda" *ngIf="BuscarInmueble.IdInmueble_Inmuebles != 0">
         <div class="container-extend titulo">
+          <button type="button" class="btn btn-light" data-toggle="modal" data-target="#actualizar"
+            (click)="obtenerInmuebleActualizar(BuscarInmueble.IdInmueble_Inmuebles)"><strong>Actualizar <i
+                class="fas fa-edit"></i></strong></button>
           <h1>{{BuscarInmueble.NombreInmueble_Inmuebles}}</h1>
         </div>
         <div class="row">
@@ -232,7 +231,9 @@
               class="card-img-top">
           </div>
           <div class="col-md-6">
-            <p>{{BuscarInmueble.Descripcion_Inmuebles}}</p>
+            <div class="texto">
+              <p>{{BuscarInmueble.Descripcion_Inmuebles}}</p>
+            </div>
             <div class="col-md-12 rigth">
               <h4><span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i>
                   {{BuscarInmueble.Direccion_Inmuebles}}</span></h4>
