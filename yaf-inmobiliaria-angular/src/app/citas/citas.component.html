@@ -54,7 +54,9 @@
 
                 <div class="container " id="crear">
 
-                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "nuevacita.Estado_Citas" naame="Estado">
+                
+
+                 
                   <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas">
                     <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
                         {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
@@ -88,7 +90,14 @@
                   </form>
 
                 </div>
-                  
+                <div class="input-group mb-2 mr-sm-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fas fa-signature"></i>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "nuevacita.Estado_Citas" naame="Estado">
+              </div>
                   <button class="btn btn-primary bcrear" (click)= "nuevacitas()">
                       Crear
                   </button>
@@ -153,7 +162,7 @@
             </form>
           </div>
                    <button class="btn btn-primary" (click)= "actualizarcitas()">
-                      Go somewhere
+                     Actualizar
                    </button>
                     
                   </div>
