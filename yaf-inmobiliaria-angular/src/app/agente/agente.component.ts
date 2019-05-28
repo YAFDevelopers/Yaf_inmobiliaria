@@ -44,6 +44,21 @@ export class AgenteComponent implements OnInit {
     SegundoApellido_Agentes: "",
     SegundoNombre_Agentes: "",
   }
+  Nuevoagente ={
+    Contrasena_Agentes: "",
+    Correo_Agentes: "",
+    Estado_Agentes: "",
+    FechaNacimiento_Agentes: "",
+    FechaRegistro_Agentes: "",
+    IdAgente_Agentes: 0,
+    IdTipoDocumento_Agentes: 0,
+    NumeroDocumento_Agentes: "",
+    NumeroTelfono_Agentes: "",
+    PrimerApellido_Agentes: "",
+    PrimerNombre_Agentes: "",
+    SegundoApellido_Agentes: "",
+    SegundoNombre_Agentes: "",
+  }
 
   constructor(private servi:ServicioYafService) { }
 
@@ -94,6 +109,19 @@ export class AgenteComponent implements OnInit {
           console.error(err);
       }
     )
-}
+  }
+  nuevoagente(){
+    console.log(this.Nuevoagente);
+    delete this.Nuevoagente.FechaRegistro_Agentes;
+    delete this.Nuevoagente.IdAgente_Agentes;
+    this.servi.crearagente(this.Nuevoagente).subscribe(
+      res =>  {
+        console.log(res);
+    },
+    err =>  {
+        console.error(err);
+    }
+    );
+  }
 
 }

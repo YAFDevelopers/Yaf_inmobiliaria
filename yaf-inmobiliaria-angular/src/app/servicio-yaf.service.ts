@@ -49,5 +49,8 @@ export class ServicioYafService {
   modificaragente(data) {
     return this.http.put(`${this.Url}/agente`,data); 
   }
+  crearagente(data) {
+    return this.http.post(`${this.Url}/agente`,data);
+  }
 }
   

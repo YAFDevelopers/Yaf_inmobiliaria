@@ -73,7 +73,7 @@ export class CitasComponent implements OnInit {
       err =>  {
         console.error(err);
       }
-    )
+    );
   }
   clientes() {
     this.servi.cliente().subscribe(
@@ -84,7 +84,7 @@ export class CitasComponent implements OnInit {
       err =>  {
         console.error(err);
       }
-    )
+    );
   }
   agentes() {
     this.servi.agente().subscribe(
@@ -95,7 +95,7 @@ export class CitasComponent implements OnInit {
       err =>  {
         console.error(err);
       }
-    )
+    );
   }
   inmuebles() {
     this.servi.inmueble().subscribe(
@@ -105,7 +105,7 @@ export class CitasComponent implements OnInit {
       err =>  {
         console.error(err);
       }
-    )
+    );
   }
   actualizarcitas()  {
       console.log(this.Actualizarcita);
@@ -117,19 +117,19 @@ export class CitasComponent implements OnInit {
         err =>  {
             console.error(err);
         }
-      )
+      );
   }
   nuevacitas(){
     console.log(this.nuevacita);
     delete this.nuevacita.FechaRegistro_Citas;
     delete this.nuevacita.IdCita_Citas;
-    this.servi.crearcita(this.nuevacitas).subscribe(
+    this.servi.crearcita(this.nuevacita).subscribe(
       res =>  {
         console.log(res);
     },
     err =>  {
         console.error(err);
     }
-    )
+    );
   }
 }

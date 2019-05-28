@@ -47,35 +47,36 @@
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="crear">
       <div class="w-100">
         <h2 class="mb-5">Crear</h2>
-
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="card">
               <img class="card-img-top" src="../../assets/image/fondoCasa.jpg" alt="Card image cap">
               <div class="card-body">
+
                 <div class="container " id="crear">
 
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "nuevacita.Estado_Citas">
-                    <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas">
-                        <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
-                          {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
-                        </option>
-                      </select>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "nuevacita.Estado_Citas" naame="Estado">
+                  <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas">
+                    <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
+                        {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
+                    </option>
+                  </select>
 
-                      <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas">
-                          <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
-                            {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}  
-                          </option>
-                        </select>
+                  <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas">
+                    <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
+                      {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}  
+                    </option>
+                  </select>
 
-                        <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas">
-                            <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
-                             {{inm.NombreInmueble_Inmuebles}}   
-                            </option>
-                          </select>
+                  <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas">
+                    <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
+                     {{inm.NombreInmueble_Inmuebles}}   
+                    </option>
+                  </select>
 
                 </div>
 
                 <div class="container" id ="crear2">
+
                   <label class="tiempo " for="#">Fecha En la que desea la cita</label>
                   <form action="#" >
                     <input class="fecha" type="date" name="fecn" [(ngModel)] = "nuevacita.Fecha_Citas">
@@ -83,9 +84,10 @@
                   <label class="tiempo " for="#">Hora  En la que desea la cita</label>
                   <form action="#">
                     <input type="time" id="appt" name="horn"
-                      min="9:00" max="18:00" required [(ngModel)] = "nuevacita.Hora_Citas">
-                    </form>  
-                  </div>
+                    min="9:00" max="18:00" required [(ngModel)] = "nuevacita.Hora_Citas">
+                  </form>
+
+                </div>
                   
                   <button class="btn btn-primary bcrear" (click)= "nuevacitas()">
                       Crear
