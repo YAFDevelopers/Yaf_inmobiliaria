@@ -43,67 +43,74 @@
     </section>
     <hr class="m-0">
     <!--Crear-->
+
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="crear">
       <div class="w-100">
         <h2 class="mb-5">Crear</h2>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="card">
-            <img class="card-img-top" src="../../assets/image/fondoCasa.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="container " id="crear"> 
-                  <div class="resume-content">
-                    <div class="dropdown show">
-                      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Cliente
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Juan</a>
-                        <a class="dropdown-item" href="#">Pedro</a>
-                        <a class="dropdown-item" href="#">Samuel</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Agente
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Juan</a>
-                      <a class="dropdown-item" href="#">Pedro</a>
-                      <a class="dropdown-item" href="#">Samuel</a>
-                    </div>
-                  </div>
-                  <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Inmueble
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Juan</a>
-                      <a class="dropdown-item" href="#">Pedro</a>
-                      <a class="dropdown-item" href="#">Samuel</a>
-                    </div>
-                  </div>
+              <img class="card-img-top" src="../../assets/image/fondoCasa.jpg" alt="Card image cap">
+              <div class="card-body">
+
+                <div class="container " id="crear">
+
+                
+
+                 
+                  <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas">
+                    <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
+                        {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
+                    </option>
+                  </select>
+
+                  <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas">
+                    <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
+                      {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}  
+                    </option>
+                  </select>
+
+                  <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas">
+                    <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
+                     {{inm.NombreInmueble_Inmuebles}}   
+                    </option>
+                  </select>
+
                 </div>
-                  <div class="container" id ="crear2">
-                    <label class="tiempo " for="#">Fecha En la que desea la cita</label>
-                    <form action="#" >
-                      <input class="fecha" type="month">
-                    </form>
-                    <label class="tiempo " for="#">Hora  En la que desea la cita</label>
-                    <form action="#">
-                      <input type="time" id="appt" name="appt"
-                      min="9:00" max="18:00" required>
-                    </form>
-                   
+
+                <div class="container" id ="crear2">
+
+                  <label class="tiempo " for="#">Fecha En la que desea la cita</label>
+                  <form action="#" >
+                    <input class="fecha" type="date" name="fecn" [(ngModel)] = "nuevacita.Fecha_Citas">
+                  </form>
+                  <label class="tiempo " for="#">Hora  En la que desea la cita</label>
+                  <form action="#">
+                    <input type="time" id="appt" name="horn"
+                    min="9:00" max="18:00" required [(ngModel)] = "nuevacita.Hora_Citas">
+                  </form>
+
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fas fa-signature"></i>
+                    </div>
                   </div>
-              <a href="#!" class="btn btn-primary bcrear">Crear</a>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "nuevacita.Estado_Citas" naame="Estado">
+              </div>
+                  <button class="btn btn-primary bcrear" (click)= "nuevacitas()">
+                      Crear
+                  </button>
+              
             </div>
-          </div>  
-        </div>
-      </div>      
-    </section>
-    <hr class="m-0">
+          </div> 
+
+         </div>
+       </div>      
+     </section>
+
 <!--Modificar-->
+    <hr class="m-0">
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
       <div class="w-100">
         <h2 class="mb-5">Modificar</h2>
@@ -121,55 +128,43 @@
                           <i class="fas fa-signature"></i>
                       </div>
                     </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="ID Cita">
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="ID Cita" [(ngModel)] = "Actualizarcita.IdCita_Citas">
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "Actualizarcita.Estado_Citas">
                 </div>
               </div>
               <div class="container">
-              <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Cliente
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Juan</a>
-                  <a class="dropdown-item" href="#">Pedro</a>
-                  <a class="dropdown-item" href="#">Samuel</a>
-                </div>
+                <select name="client" id="client" [(ngModel)] = "Actualizarcita.IdCliente_Citas">
+                  <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
+                    {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
+                  </option>
+                </select>
               </div>
-            </div>
-            <div class="dropdown show">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Agente
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Juan</a>
-                <a class="dropdown-item" href="#">Pedro</a>
-                <a class="dropdown-item" href="#">Samuel</a>
-              </div>
-            </div>
-            <div class="dropdown show">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Inmueble
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Juan</a>
-                <a class="dropdown-item" href="#">Pedro</a>
-                <a class="dropdown-item" href="#">Samuel</a>
-              </div>
-            </div>
+              <select name="agent" id="agent" [(ngModel)] = "Actualizarcita.IdAgente_Citas">
+                <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
+                  {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}  
+                </option>
+              </select>
+              <select name="inmu" id="inmu" [(ngModel)] = "Actualizarcita.IdInmueble_Citas">
+                <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
+                 {{inm.NombreInmueble_Inmuebles}}   
+                </option>
+              </select>
           </div>
           <div class="container">
             <label class="tiempo " for="#">Fecha En la que desea la cita</label>
             <form action="#" >
-              <input class="fecha" type="month">
+              <input class="fecha" type="date" name="fec" [(ngModel)] = "Actualizarcita.Fecha_Citas">
             </form>
              <label class="tiempo " for="#">Hora  En la que desea la cita</label>
             <form action="#">
-            <input type="time" id="appt" name="appt"
-              min="9:00" max="18:00" required>
+            <input type="time" id="appt" name="hor"
+              min="9:00" max="18:00" required [(ngModel)] = "Actualizarcita.Hora_Citas">
             </form>
           </div>
-                   
-                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                   <button class="btn btn-primary" (click)= "actualizarcitas()">
+                     Actualizar
+                   </button>
+                    
                   </div>
                 </div>
 
@@ -177,6 +172,7 @@
       </div>
     </section>
     <hr class="m-0">
+
 <!--Buscar-->
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
       <div class="w-100">
@@ -187,45 +183,34 @@
                   <i class="fas fa-signature"></i>
               </div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id Cita">
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id Cita" [(ngModel)]="idbuscar">
           </div>
-          <button type="button" class="btn btn-primary">Buscar</button>
+          <button type="button" class="btn btn-primary" (click)="citatraeruna()">Buscar</button>
           <div class="table-container">
             <table class="table-rwd">
               <tr>
               
                 <th>id</th>
-                <th>Cliente</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Hora</th>
                 <th>Agente</th>
+                <th>Cliente</th>
                 <th>Inmueble</th>
-                <th>Periodo 4</th>
-                <th>fecha</th>
-                <th>hora</th>
                 <th>registro</th>
                 
               </tr>
-              <tr>
-              
-                <td>100</td>
-                <td>200</td>
-                <td>300</td>
-                <td>400</td>
-                <td>500</td>
-                <td>600</td>
-                <td>700</td>
-                <td>700</td>
+              <tr>        
+                <td>{{Buscarcita.IdCita_Citas}}</td>
+                <td>{{Buscarcita.Estado_Citas}}</td>
+                <td>{{Buscarcita.Fecha_Citas}}</td>
+                <td>{{Buscarcita.Hora_Citas}}</td>
+                <td>{{Buscarcita.nombreAgente}}</td>
+                <td>{{Buscarcita.nombreCliente}}</td>
+                <td>{{Buscarcita.NombreInmueble_Inmuebles}}</td>
+                <td>{{Buscarcita.FechaRegistro_Citas}}</td>
               </tr>
-              <tr>
-               
-                <td>200</td>
-                <td>400</td>
-                <td>600</td>
-                <td>800</td>
-                <td>1000</td>
-                <td>1200</td>
-                <td>1400</td>
-                <td>700</td>
-              </tr>           
+          
             </table>
           </div>
       </div>
@@ -236,42 +221,30 @@
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="listar">
       <div class="w-100">
         <h2 class="mb-5">Listar</h2>
-        <button type="button" class="btn btn-primary">Buscar</button>
+        <button type="button" class="btn btn-primary" (click)= "citastraer();">Buscar</button>
         <div class="table-container">
           <table class="table-rwd">
             <tr>
             
               <th>id</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Estado</th>
               <th>Cliente</th>
               <th>Agente</th>
               <th>Inmueble</th>
-              <th>Periodo 4</th>
-              <th>fecha</th>
-              <th>hora</th>
-              <th>registro</th>
+              <th>Fecha de Registro</th>
               
-            </tr>
-            <tr>
-            
-              <td>100</td>
-              <td>200</td>
-              <td>300</td>
-              <td>400</td>
-              <td>500</td>
-              <td>600</td>
-              <td>700</td>
-              <td>700</td>
-            </tr>
-            <tr>
-             
-              <td>200</td>
-              <td>400</td>
-              <td>600</td>
-              <td>800</td>
-              <td>1000</td>
-              <td>1200</td>
-              <td>1400</td>
-              <td>700</td>
+            </tr>  
+            <tr *ngFor="let cita of citas">
+              <td>{{cita.IdCita_Citas}}</td>
+              <td>{{cita.Fecha_Citas}} </td>
+              <td>{{cita.Hora_Citas}} </td>
+              <td>{{cita.Estado_Citas}} </td>
+              <td>{{cita.nombreCliente}} </td>
+              <td>{{cita.nombreAgente}} </td>
+              <td>{{cita.NombreInmueble_Inmuebles}} </td>
+              <td>{{cita.FechaRegistro_Citas}} </td>
             </tr>           
           </table>
         </div>

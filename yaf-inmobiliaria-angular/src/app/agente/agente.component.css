@@ -236,10 +236,8 @@
     .table-rwd td {
       text-align: right; }
       .table-rwd td:before {
-        content: "$ ";
         color: #1A8CFF; }
-      .table-rwd td:after {
-        content: ".00"; }
+    
   
     .table-rwd tr:hover {
       background: rgba(181, 213, 144, 0.2); }

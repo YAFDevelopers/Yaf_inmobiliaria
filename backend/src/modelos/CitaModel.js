@@ -8,7 +8,12 @@ CitaModel.getCitas = function (callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM Citas;";
+        var sql = "SELECT citas.IdCita_Citas,citas.Fecha_Citas,citas.Hora_Citas,citas.Estado_Citas, "
+                +"CONCAT (Clientes.PrimerNombre_Clientes,' ',COALESCE(Clientes.SegundoNombre_Clientes,''),' ',Clientes.PrimerApellido_Clientes,' ',COALESCE(Clientes.SegundoApellido_Clientes,'')) as nombreCliente, "
+                +"CONCAT(Agentes.PrimerNombre_Agentes,' ',COALESCE(Agentes.SegundoNombre_Agentes,''),' ',Agentes.PrimerApellido_Agentes,' ',COALESCE(Agentes.SegundoApellido_Agentes,'')) as nombreAgente, "
+                +"inmuebles.NombreInmueble_Inmuebles,citas.FechaRegistro_Citas "
+                +"FROM citas,agentes,clientes,inmuebles "
+                +"WHERE citas.IdCliente_Citas=clientes.IdCliente_Clientes && agentes.IdAgente_Agentes=citas.IdAgente_Citas && inmuebles.IdInmueble_Inmuebles=citas.IdInmueble_Citas; ";
         
         connection.query(sql, function (error, rows) 
         {
@@ -30,8 +35,12 @@ CitaModel.getCita = function (id, callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM Citas  "
-                        +" WHERE IdCita_Citas  = " 
+        var sql = "SELECT citas.IdCita_Citas,citas.Fecha_Citas,citas.Hora_Citas,citas.Estado_Citas, "
+        +"CONCAT (Clientes.PrimerNombre_Clientes,' ',COALESCE(Clientes.SegundoNombre_Clientes,''),' ',Clientes.PrimerApellido_Clientes,' ',COALESCE(Clientes.SegundoApellido_Clientes,'')) as nombreCliente, "
+        +"CONCAT(Agentes.PrimerNombre_Agentes,' ',COALESCE(Agentes.SegundoNombre_Agentes,''),' ',Agentes.PrimerApellido_Agentes,' ',COALESCE(Agentes.SegundoApellido_Agentes,'')) as nombreAgente, "
+        +"inmuebles.NombreInmueble_Inmuebles,citas.FechaRegistro_Citas "
+        +"FROM citas,agentes,clientes,inmuebles "
+        +"WHERE citas.IdCliente_Citas=clientes.IdCliente_Clientes && agentes.IdAgente_Agentes=citas.IdAgente_Citas && inmuebles.IdInmueble_Inmuebles=citas.IdInmueble_Citas && IdCita_Citas  = " 
                         + connection.escape(id) + ";";
 
         //console.log(id);
