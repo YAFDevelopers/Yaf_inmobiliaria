@@ -1,4 +1,7 @@
 <div class="cuerpo" id="page-top">
+  <!--// ////////////////////////////////////////////////////// \\
+          //             BARRA DE NAVEGACION                       \\
+          // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-none d-lg-block">
@@ -25,9 +28,13 @@
       </ul>
     </div>
   </nav>
-
+  <!--// ////////////////////////////////////////////////////// \\
+          //             CONTENEDOR                              \\
+          // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
   <div class="container-fluid p-0">
-
+    <!--// ////////////////////////////////////////////////////// \\
+          //             AGREGAR INMUEBLE                          \\
+          // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
     <section class="resume-section p-3 p-lg-5  " id="crearInmueble">
       <h3>Crear</h3>
       <br>
@@ -39,21 +46,21 @@
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-home"></i></div>
             </div>
-            <select class="custom-select" id="tipInmueble">
-              <option selected>Choose...</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="custom-select" (change)="selectTipInm($event)" id="tipInmueble">
+              <option *ngFor="let TipInmueble of TipoInmuebles  " value="{{TipInmueble.IdTipoInmueble_TipoInmuebles }}">
+                {{TipInmueble.NombreTipoInmueble}}</option>
             </select>
           </div>
         </div>
         <div class="form-group">
           <label for="nombreInmueble" class="col-form-label">Nombre:</label>
-          <input type="text" class="form-control" name="nombreInmueble" id="">
+          <input type="text" class="form-control" [(ngModel)]="NuevoInmueble.NombreInmueble_Inmuebles"
+            name="nombreInmueble" id="">
         </div>
         <div class="form-group">
-          <label for="descripccionInmueble">Descrpccion</label>
-          <textarea class="form-control" id="descripccionInmueble" rows="3"></textarea>
+          <label for="descripccionInmueble">Descripción</label>
+          <textarea class="form-control" id="descripccionInmueble" [(ngModel)]="NuevoInmueble.Descripcion_Inmuebles"
+            name="descripcionInmueble" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="direcionInmueble" class="col-form-label">Direción:</label>
@@ -61,7 +68,8 @@
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-map-marked-alt"></i></div>
             </div>
-            <input type="text" class="form-control" name="direcionInmueble" id="">
+            <input type="text" class="form-control" [(ngModel)]="NuevoInmueble.Direccion_Inmuebles"
+              name="direcionInmueble" id="">
           </div>
         </div>
         <div class="form-group">
@@ -70,114 +78,125 @@
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
             </div>
-            <input type="number" class="form-control" name="valorInmueble" id="">
+            <input type="number" class="form-control" [(ngModel)]="NuevoInmueble.Valor_Inmuebles" name="valorInmueble"
+              min="1">
           </div>
         </div>
       </form>
-      <button type="button" class="btn btn-primary primayColor">Guardar</button>
+      <button type="button" (click)="AgregarInmueble()" class="btn btn-primary primayColor">Guardar</button>
     </section>
 
     <hr class="m-0">
 
+    <!--// ////////////////////////////////////////////////////// \\
+          //             LISTAR Y ACTUALIZAR INMUEBLE              \\
+          // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
     <section class="resume-section p-3 p-lg-5" id="listar">
       <h3>Listar</h3>
       <br>
       <div class="container-fluid cards">
         <ul class="flex-container">
-          <li class="flex-item">
+          <li class="flex-item" *ngFor="let inmueble of inmuebles">
             <div class="card">
               <div class="card-header cardHeader">
-                <h5 class="card-title Title">Apartamento Silicon Valley</h5>
+                <h5 class="card-title Title">{{inmueble.IdInmueble_Inmuebles}}. {{inmueble.NombreInmueble_Inmuebles}}
+                </h5>
               </div>
-              <!--<img src="./Imagenes/01.jpg" class="card-img-top" alt="..."> -->
+              <img [attr.src]="'../../assets/image/'+ inmueble.IdTipoInmueble_Inmuebles + '.jpeg'" class="card-img-top"
+                alt="...">
               <div class="card-body">
                 <div>
-                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i> 251 Brandon
-                    Street, San Jose, CA 95134</span><br>
-                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i> 3.500.200</span><br>
-                </div>
-                <br>
-                <button type="button" class="btn btn-danger angendar" data-toggle="modal" data-target="#actualizar">
-                  <i class="fas fa-pen"></i> Actualizar
-                </button>
-              </div>
-            </div>
-            <!--  ///////////////////////////////////////////////////////////////////////////////////////
-            Modal Actualizar
-            ////////////////////////////////////////////////////////////////////////////////////// -->
-            <div class="modal fade" id="actualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header primayColor">
-                    <h5 class="modal-title Title" id="exampleModalLabel">Actualizar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-
-                      <input type="hidden" name="IdInmueble" value="">
-                      <div class="form-group">
-                        <label for="tipInmueble" class="col-form-label">Tipo de inmueble:</label>
-                        <div class="input-group mb-2">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fas fa-home"></i></div>
-                          </div>
-                          <select class="custom-select" id="tipInmueble">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="nombreInmueble" class="col-form-label">Nombre:</label>
-                        <input type="text" class="form-control" name="nombreInmueble" id="">
-                      </div>
-                      <div class="form-group">
-                        <label for="descripccionInmueble">Descrpccion</label>
-                        <textarea class="form-control" id="descripccionInmueble" rows="3"></textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="direcionInmueble" class="col-form-label">Direción:</label>
-                        <div class="input-group mb-2">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fas fa-map-marked-alt"></i></div>
-                          </div>
-                          <input type="text" class="form-control" name="direcionInmueble" id="">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="valorInmueble" class="col-form-label">Valor:</label>
-                        <div class="input-group mb-2">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">$</div>
-                          </div>
-                          <input type="number" class="form-control" name="valorInmueble" id="">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="estadoInmueble" class="col-form-label">Estado:</label>
-                        <select class="custom-select" id="estadoInmueble">
-                          <option selected>Choose...</option>
-                          <option value="1">Activo</option>
-                          <option value="2">Inactivo</option>
-                        </select>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary primayColor">Guardar</button>
-                  </div>
+                  <span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i>
+                    {{inmueble.Direccion_Inmuebles}}</span><br>
+                  <span class="badge badge-dark"><i class="fas fa-money-bill-alt"></i>
+                    {{inmueble.Valor_Inmuebles}}</span><br>
+                  <span class="badge badge-success" *ngIf="inmueble.Estado_Inmuebles =='ACTIVO'">
+                    {{inmueble.Estado_Inmuebles}}</span>
+                  <span class="badge badge-danger" *ngIf="inmueble.Estado_Inmuebles =='INACTIVO'">
+                    {{inmueble.Estado_Inmuebles}}</span>
                 </div>
               </div>
             </div>
           </li>
+          <!--  ///////////////////////////////////////////////////////////////////////////////////////
+            Modal Actualizar
+            ////////////////////////////////////////////////////////////////////////////////////// -->
+          <div class="modal fade" id="actualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header primayColor">
+                  <h5 class="modal-title Title" id="exampleModalLabel">Actualizar</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
 
+                    <input type="hidden" name="IdInmueble" value="{{ActulizarInmueble.IdInmueble_Inmuebles}}">
+                    <div class="form-group">
+                      <label for="tipInmueble" class="col-form-label">Tipo de inmueble:</label>
+                      <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text"><i class="fas fa-home"></i></div>
+                        </div>
+                        <select class="custom-select" name="tipInmueble"
+                          [(ngModel)]="ActulizarInmueble.IdTipoInmueble_Inmuebles">
+                          <option *ngFor="let TipInmueble of TipoInmuebles  "
+                            value="{{TipInmueble.IdTipoInmueble_TipoInmuebles }}">{{TipInmueble.NombreTipoInmueble}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="nombreInmueble" class="col-form-label">Nombre:</label>
+                      <input type="text" class="form-control" name="nombreInmueble"
+                        [(ngModel)]="ActulizarInmueble.NombreInmueble_Inmuebles">
+                    </div>
+                    <div class="form-group">
+                      <label for="descripccionInmueble">Descrpccion</label>
+                      <textarea class="form-control" name="descripccionInmueble"
+                        [(ngModel)]="ActulizarInmueble.Descripcion_Inmuebles" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="direcionInmueble" class="col-form-label">Direción:</label>
+                      <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text"><i class="fas fa-map-marked-alt"></i></div>
+                        </div>
+                        <input type="text" class="form-control" name="direcionInmueble"
+                          [(ngModel)]="ActulizarInmueble.Direccion_Inmuebles">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="valorInmueble" class="col-form-label">Valor:</label>
+                      <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" name="valorInmueble"
+                          [(ngModel)]="ActulizarInmueble.Valor_Inmuebles" min="1">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="estadoInmueble" class="col-form-label">Estado:</label>
+                      <select class="custom-select" [(ngModel)]="ActulizarInmueble.Estado_Inmuebles"
+                        name="estadoInmueble">
+                        <option value="ACTIVO">ACTIVO</option>
+                        <option value="INACTIVO">INACTIVO</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary primayColor"
+                    (click)="actulizarInmueble()">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </ul>
       </div>
 
@@ -185,15 +204,50 @@
 
     <hr class="m-0">
 
+    <!--// ////////////////////////////////////////////////////// \\
+          //             BUSCAR INMUEBLE                           \\
+          // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
     <section class="resume-section p-3 p-lg-5" id="buscar">
       <h3>Buscar</h3>
       <br>
       <form class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-          <input type="text" class="form-control" id="idInmueble" placeholder="Id Inmuelbe">
+          <input type="number" class="form-control" [(ngModel)]="idBusqueda" name="idInmueble " min="1"
+            placeholder="Id Inmuelbe">
         </div>
-        <button class="btn btn-primary mb-2 primayColor"><i class="fas fa-search"></i></button>
+        <button class="btn btn-primary mb-2 primayColor" (click)="obtenerInmuebleBuscar(idBusqueda)"><i
+            class="fas fa-search"></i></button>
       </form>
+      <div class="container containerBusqueda" *ngIf="BuscarInmueble.IdInmueble_Inmuebles != 0">
+        <div class="container-extend titulo">
+          <button type="button" class="btn btn-light" data-toggle="modal" data-target="#actualizar"
+            (click)="obtenerInmuebleActualizar(BuscarInmueble.IdInmueble_Inmuebles)"><strong>Actualizar <i
+                class="fas fa-edit"></i></strong></button>
+          <h1>{{BuscarInmueble.NombreInmueble_Inmuebles}}</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img [attr.src]="'../../assets/image/'+ BuscarInmueble.IdTipoInmueble_Inmuebles + '.jpeg'"
+              class="card-img-top">
+          </div>
+          <div class="col-md-6">
+            <div class="texto">
+              <p>{{BuscarInmueble.Descripcion_Inmuebles}}</p>
+            </div>
+            <div class="col-md-12 rigth">
+              <h4><span class="badge badge-pill badge-info"><i class="fas fa-map-marked-alt"></i>
+                  {{BuscarInmueble.Direccion_Inmuebles}}</span></h4>
+              <h4><span class="badge badge-success" *ngIf="BuscarInmueble.Estado_Inmuebles =='ACTIVO'">
+                  {{BuscarInmueble.Estado_Inmuebles}}</span>
+                <span class="badge badge-danger" *ngIf="BuscarInmueble.Estado_Inmuebles =='INACTIVO'">
+                  {{BuscarInmueble.Estado_Inmuebles}}</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="container-extend pie">
+          <h1>$ {{BuscarInmueble.Valor_Inmuebles}}</h1>
+        </div>
+      </div>
     </section>
   </div>
 </div>

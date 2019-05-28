@@ -4,13 +4,14 @@ var router = express.Router();
 
 module.exports = function ()
 {
-    router.get("/primera/:fecha_ini/:fecha_fin", function (req, res)
+    router.get("/primera/:id/:fecha_ini/:fecha_fin", function (req, res)
     {
+        var id = req.params.id;
         var fecha_ini = req.params.fecha_ini;
         var fecha_fin = req.params.fecha_fin;
 
 
-        ConsultaModel.getConsultaPrimera(fecha_ini,fecha_fin, function (error, data)
+        ConsultaModel.getConsultaPrimera(id,fecha_ini,fecha_fin, function (error, data)
             {
                 //si el tipo de documento existe lo mostramos en formato json
                 if (typeof data !== 'undefined' && data.length > 0)
