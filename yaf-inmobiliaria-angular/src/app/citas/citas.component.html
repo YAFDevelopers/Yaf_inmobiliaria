@@ -46,7 +46,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h2 class="m-b-2" id="crear">Formulario de Cliente</h2>
+              <div class="container">
+                  <h2 class="m-b-2" id="crear">Crear</h2>
+              </div>
                 <form action="#">
                     <div class="form-group row">
                         <label for="nombre" class="col-md-4 col-form-label">Cliente</label>
@@ -177,7 +179,7 @@
     <hr class="m-0">
 
 <!--Buscar-->
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="listar">
       <div class="w-100">
         <h2 class="mb-5">Buscar</h2>
         <div class="input-group mb-2 mr-sm-2">
@@ -189,7 +191,7 @@
             <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id Cita" [(ngModel)]="idbuscar">
           </div>
           <button type="button" class="btn btn-primary" (click)="citatraeruna()">Buscar</button>
-          <div class="table-container">
+          <div class="table-container table-dark">
             <table class="table-rwd">
               <tr>
               
@@ -221,8 +223,8 @@
 
     <hr class="m-0">
 <!--Listar-->
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="listar">
-      <div class="w-100">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100 as">
         <h2 class="mb-5">Listar</h2>
         <button type="button" class="btn btn-primary" (click)= "citastraer();">Buscar</button>
         <div class="table-container">
