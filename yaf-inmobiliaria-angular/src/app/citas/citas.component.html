@@ -33,17 +33,17 @@
   <div class="container-fluid p-0">
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0">Piensa
+        <h1 class="mb-0 animated pulse">Piensa
           <span class="text-primary"> en ti </span>
         </h1>
-        <div class="subheading mb-5">Cada dia mejorando mas, para que tu siempre estes comodo·
+        <div class="subheading mb-5 animated bounceInRight">Cada dia mejorando mas, para que tu siempre estes comodo·
         </div>
-        <p class="lead mb-5">En este espacio podras agendar una cita,modificar o hacer busquedas para que puedas organizar mejor tu tiempo, mas secar de ti.</p>
+        <p class="lead mb-5 animated bounceInRight">En este espacio podras agendar una cita,modificar o hacer busquedas para que puedas organizar mejor tu tiempo, mas secar de ti.</p>
       </div>
     </section>
     <hr class="m-0">
     <!--Crear-->
-
+    <!--
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="crear">
       <div class="w-100">
         <h2 class="mb-5">Crear</h2>
@@ -51,12 +51,7 @@
             <div class="card">
               <img class="card-img-top" src="../../assets/image/fondoCasa.jpg" alt="Card image cap">
               <div class="card-body">
-
                 <div class="container " id="crear">
-
-                
-
-                 
                   <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas">
                     <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
                         {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
@@ -101,14 +96,82 @@
                   <button class="btn btn-primary bcrear" (click)= "nuevacitas()">
                       Crear
                   </button>
-              
             </div>
           </div> 
-
          </div>
        </div>      
      </section>
+-->
+<main class="p-y-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="m-b-2">Formulario de Cliente</h2>
+                <form action="#">
+                    <div class="form-group row">
+                        <label for="nombre" class="col-md-4 col-form-label">Cliente</label>
+                        <div class="col-md-8">
+                            <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas" data-toggle="tooltip" data-placement="top" title="Ingrese su nombre completo">
+                                <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
+                                    {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label">Agente</label>
+                        <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas">
+                            <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
+                                  {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="mensaje" class="col-md-4 col-form-label">Inmueble</label>
 
+                        <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas">
+                            <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
+                                {{inm.NombreInmueble_Inmuebles}}  
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="mensaje" class="col-md-4 col-form-label">Estado</label>
+
+                        <div class="col-md-8">
+                            <input type="text"  class="form-control" rows="5" id="mensaje" name="mensaje" placeholder="Ingrese su mensaje" data-toggle="tooltip" data-placement="top" title="Ingrese un mensaje" [(ngModel)] = "nuevacita.Estado_Citas" name="Estado">
+                           
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                            <label for="mensaje" class="col-md-4 col-form-label">Fecha</label>
+
+                            <div class="col-md-8">
+                                <input type="date"  class="form-control" rows="5" id="mensaje" name="fecha" placeholder="Ingrese su mensaje" data-toggle="tooltip" data-placement="top" title="Ingrese un mensaje" [(ngModel)] = "nuevacita.Fecha_Citas">
+                               
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                                <label for="mensaje" class="col-md-4 col-form-label">Hora</label>
+                                
+                                <form action="#">
+                                        <input type="time" id="appt" name="horn"
+                                        min="9:00" max="18:00" required [(ngModel)] = "nuevacita.Hora_Citas" rows="5">
+                                </form>
+                            </div>                     
+                    <div class="form-group row">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary"(click)= "nuevacitas()">Crear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+              <img src="../../assets/image/familia.svg" alt="">
+            </div>
+        </div>
+    </div>
+</main>
 <!--Modificar-->
     <hr class="m-0">
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">

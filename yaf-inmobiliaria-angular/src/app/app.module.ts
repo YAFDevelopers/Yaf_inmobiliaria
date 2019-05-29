@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 // modulos para conectar el servicio
 import {HttpClientModule} from '@angular/common/http';
-
 import {FormsModule} from '@angular/forms'
 import {ServicioYafService} from './servicio-yaf.service';
 
@@ -18,6 +18,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { FooterComponent } from './footer/footer.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { InformesComponent } from './informes/informes.component';
+
+
 
 @NgModule({
   declarations: [
