@@ -65,7 +65,7 @@ module.exports = function ()
                 SegundoApellido_Agentes: req.body.SegundoApellido_Agentes,
                 FechaNacimiento_Agentes: req.body.FechaNacimiento_Agentes,
                 Correo_Agentes: req.body.Correo_Agentes,
-                Contraseña_Agentes: req.body.Contraseña_Agentes,
+                Contrasena_Agentes: req.body.Contrasena_Agentes,
                 NumeroTelfono_Agentes: req.body.NumeroTelfono_Agentes,
                 Estado_Agentes: req.body.Estado_Agentes,
                 FechaRegistro_Agentes: null,
@@ -105,7 +105,7 @@ module.exports = function ()
                 FechaNacimiento_Agentes: req.body.FechaNacimiento_Agentes,
                 NumeroTelfono_Agentes: req.body.NumeroTelfono_Agentes,
                 Correo_Agentes: req.body.Correo_Agentes,
-                Contraseña_Agentes: req.body.Contraseña_Agentes,
+                Contrasena_Agentes: req.body.Contrasena_Agentes,
                 Estado_Agentes: req.body.Estado_Agentes,
                 FechaRegistro_Agentes: req.body.FechaRegistro_Agentes,
             };

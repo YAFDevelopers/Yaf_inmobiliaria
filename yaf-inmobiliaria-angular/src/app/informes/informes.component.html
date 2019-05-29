@@ -1,3 +1,234 @@
-<p>
-  informes works!
-</p>
+<div class="cuerpo" id="page-top">
+  <!--// ////////////////////////////////////////////////////// \\
+            //             BARRA DE NAVEGACION                       \\
+            // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-none d-lg-block">
+        <a href="#">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        </a>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="informes#inmuebleTiempo" target="_self">Citas por inmubles periodo
+            y de tiempo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="informes#agenteTiempo">Citas por agente periodo y de tiempo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="informes#clienteTiempo">Citas por cliente periodo y de tiempo</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--// ////////////////////////////////////////////////////// \\
+            //             CONTENEDOR                              \\
+            // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
+  <div class="container-fluid p-0">
+    <!--// ////////////////////////////////////////////////////// \\
+            //   Citas por inmubles periodo y de tiempo              \\
+            // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
+    <section class="resume-section p-3 p-lg-5  " id="inmuebleTiempo">
+      <h3 class="animated zoomIn">Citas por inmubles periodo y de tiempo</h3>
+      <p class="animated zoomIn">Selecione el id del inmueble y el intervalo de fecha.</p>
+      <form>
+        <div class="form-group">
+          <label for="idInmueble">Selecione id de Inmueble:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-home"></i></div>
+            </div>
+            <select name="idInmueble" [(ngModel)]="informeInmuebleId">
+              <option *ngFor="let Inmueble of Inmuebles" value="{{Inmueble.IdInmueble_Inmuebles}}">{{Inmueble.IdInmueble_Inmuebles}}. {{Inmueble.NombreInmueble_Inmuebles}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fechaInicial">Desde:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+            </div>
+            <input type="date" name="fechaInicial" [(ngModel)]="informeInmuebleFechaIni">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fechaFinal">Hasta:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+            </div>
+            <input type="date" name="fechaFinal" [(ngModel)]="informeInmuebleFechaFin">
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger" (click)="generarInforme1()">Generar</button>
+      </form>
+      <br>
+      <div class="table-container">
+        <table class="table-rwd">
+          <tr>
+            <th>Id</th>
+            <th>Nombre cliente</th>
+            <th>Documento cliente</th>
+            <th>Número documento cliente</th>
+            <th>Nombre agente</th>
+            <th>Documento agente</th>
+            <th>Número documento agente</th>
+            <th>Inmueble</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+          </tr>
+          <tr *ngFor="let informe of informeInmuebleArray">
+
+            <td>{{informe.IdCita_Citas}}</td>
+            <td>{{informe.nombreCliente}}</td>
+            <td>{{informe.documentoCliente}}</td>
+            <td>{{informe.NumeroDocuemto_Clientes}}</td>
+            <td>{{informe.nombreAgente}}</td>
+            <td>{{informe.documentoAgente}}</td>
+            <td>{{informe.NumeroDocumento_Agentes}}</td>
+            <td>{{informe.NombreInmueble_Inmuebles}}</td>
+            <td>{{informe.Fecha_Citas}}</td>
+            <td>{{informe.Hora_Citas}}</td>
+          </tr>
+        </table>
+      </div>
+
+    </section>
+
+    <hr class="m-0">
+
+    <!--// ////////////////////////////////////////////////////// \\
+            //     Citas por agente periodo y de tiempo              \\
+            // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
+    <section class="resume-section p-3 p-lg-5" id="agenteTiempo">
+      <h3>Citas por agente periodo y de tiempo</h3>
+      <p>Selecione el id del agente y el intervalo de fecha.</p>
+      <form>
+        <div class="form-group">
+          <label for="idAgente">Selecione id de Agente:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-home"></i></div>
+            </div>
+            <select name="idAgente" [(ngModel)]="informeAgenteId">
+              <option *ngFor="let Agente of Agentes" value="{{Agente.IdAgente_Agentes}}">{{Agente.IdAgente_Agentes}}. {{Agente.PrimerNombre_Agentes}} {{Agente.	SegundoNombre_Agentes}} {{Agente.PrimerApellido_Agentes}} {{Agente.SegundoApellido_Agentes}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fechaInicial">Desde:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+            </div>
+            <input type="date" name="fechaInicial" [(ngModel)]="informeAgenteFechaIni">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fechaFinal">Hasta:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+            </div>
+            <input type="date" name="fechaFinal" [(ngModel)]="informeAgenteFechaFin">
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger" (click)="generarInforme2()">Generar</button>
+      </form>
+      <br>
+      <div class="table-container">
+        <table class="table-rwd">
+          <tr>
+            <th>Nombre cliente</th>
+            <th>Inmueble</th>
+            <th>Dirección</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+          </tr>
+          <tr *ngFor="let agente of informeAgenteArray">
+
+            <td>{{agente.Nombre_Cliente}}</td>
+            <td>{{agente.NombreInmueble_Inmuebles}}</td>
+            <td>{{agente.Direccion_Inmuebles}}</td>
+            <td>{{agente.Fecha_Citas}}</td>
+            <td>{{agente.Hora_Citas}}</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!--// ////////////////////////////////////////////////////// \\
+            //       Citas por cliente periodo y de tiempo           \\
+            // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\ -->
+    <section class="resume-section p-3 p-lg-5" id="clienteTiempo">
+      <h3>Citas por cliente periodo y de tiempo</h3>
+      <p>Selecione el id del cliente y el intervalo de fecha.</p>
+      <form>
+        <div class="form-group">
+          <label for="idCliente">Selecione id de Cliente:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-home"></i></div>
+            </div>
+            <select name="idCliente" [(ngModel)]="informeClienteId">
+              <option *ngFor="let Cliente of Clientes" value="{{Cliente.IdCliente_Clientes}}">{{Cliente.IdCliente_Clientes}}. {{Cliente.PrimerNombre_Clientes}} {{Cliente.	SegundoNombre_Clientes}} {{Cliente.PrimerApellido_Clientes}} {{Cliente.SegundoApellido_Clientes}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fechaInicial">Desde:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+            </div>
+            <input type="date" name="fechaInicial" [(ngModel)]="informeClienteFechaIni">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fechaFinal">Hasta:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+            </div>
+            <input type="date" name="fechaFinal" [(ngModel)]="informeClienteFechaFin">
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger" (click)="generarInforme3()">Generar</button>
+      </form>
+      <br>
+      <div class="table-container">
+        <table class="table-rwd">
+          <tr>
+            <th>Nombre agente</th>
+            <th>Tipo documento</th>
+            <th>Número documento</th>
+            <th>Correo agente</th>
+            <th>Número telefono</th>
+            <th>Fecha cita</th>
+            <th>Hora cita</th>
+          </tr>
+          <tr *ngFor="let cleinte of informeClienteArray">
+            <td>{{cleinte.NombreAgente}}</td>
+            <td>{{cleinte.NombreTipodeDocumento_TipodeDocumentos}}</td>
+            <td>{{cleinte.NumeroDocumento_Agentes}}</td>
+            <td>{{cleinte.Correo_Agentes}}</td>
+            <td>{{cleinte.NumeroTelfono_Agentes}}</td>
+            <td>{{cleinte.Fecha_Citas}}</td>
+            <td>{{cleinte.Hora_Citas}}</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

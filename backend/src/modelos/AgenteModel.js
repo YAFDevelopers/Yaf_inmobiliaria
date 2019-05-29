@@ -8,7 +8,10 @@ AgenteModel.getAgentes = function (callback)
 {
     if (connection)
     {
-        var sql = "SELECT * FROM Agentes;";
+        var sql = "SELECT agentes.IdAgente_Agentes,tipodedocumentos.NombreTipodeDocumento_TipodeDocumentos,agentes.NumeroDocumento_Agentes,agentes.PrimerNombre_Agentes,agentes.SegundoNombre_Agentes,agentes.PrimerApellido_Agentes,agentes.SegundoApellido_Agentes,agentes.FechaNacimiento_Agentes, " 
+                +"agentes.Correo_Agentes,agentes.Contrasena_Agentes,agentes.NumeroTelfono_Agentes,agentes.Estado_Agentes,agentes.FechaRegistro_Agentes "  
+                +"FROM agentes,tipodedocumentos " 
+                +"WHERE tipodedocumentos.IdtipoddeDocumento_TipodeDocumentos=agentes.IdTipoDocumento_Agentes; ";
         
         connection.query(sql, function (error, rows) 
         {
@@ -89,7 +92,7 @@ AgenteModel.updateAgente = function (AgenteData, callback)
                     + ", SegundoApellido_Agentes = " + connection.escape(AgenteData.SegundoApellido_Agentes)
                     + ", FechaNacimiento_Agentes = " + connection.escape(AgenteData.FechaNacimiento_Agentes)
                     + ", Correo_Agentes = " + connection.escape(AgenteData.Correo_Agentes)
-                    + ", Contraseña_Agentes = " + connection.escape(AgenteData.Contraseña_Agentes)
+                    + ", Contrasena_Agentes = " + connection.escape(AgenteData.Contrasena_Agentes)
                     + ", NumeroTelfono_Agentes = " + connection.escape(AgenteData.NumeroTelfono_Agentes)
                     + ", Estado_Agentes = " + connection.escape(AgenteData.Estado_Agentes)
                     + ", FechaRegistro_Agentes = " + connection.escape(AgenteData.FechaRegistro_Agentes)

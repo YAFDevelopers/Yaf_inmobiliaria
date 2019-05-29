@@ -3,6 +3,27 @@ img
 {
     width: 100%;
 }
+.jumbotron{
+  background: darkred;
+  color: wheat;
+}
 
+.paginas-internas .lista-servicios {
+    background: #7F0912; }
+  
+  .paginas-internas .lista-servicios .item-servicios {
+    background: #ffffff;
+    text-align: center;
+    border: 5px solid #7F0912;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 1rem; }
+  
+  .paginas-internas .lista-servicios .item-servicios .fa {
+    font-size: 6rem;
+    color: #12AFAF;
+    margin-bottom: 1rem;
+    -webkit-transition: all 1s ease;
+            transition: all 1s ease; }
 
-
+  

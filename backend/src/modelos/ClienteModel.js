@@ -81,7 +81,7 @@ clienteModel.updateCliente = function (ClienteData, callback)
 
     if (connection)
     {
-        var sql = "UPDATE Clientes SET 	IdTipoDocumento_Clientes = " + connection.escape(ClienteData.	IdTipoDocumento_Clientes)
+        var sql = "UPDATE Clientes SET 	IdTipoDocumento_Clientes = " + connection.escape(ClienteData.IdTipoDocumento_Clientes)
         + ", NumeroDocuemto_Clientes = " + connection.escape(ClienteData.NumeroDocuemto_Clientes)
                     + ", PrimerNombre_Clientes = " + connection.escape(ClienteData.PrimerNombre_Clientes)
                     + ", SegundoNombre_Clientes = " + connection.escape(ClienteData.SegundoNombre_Clientes)
@@ -89,7 +89,7 @@ clienteModel.updateCliente = function (ClienteData, callback)
                     + ", SegundoApellido_Clientes = " + connection.escape(ClienteData.SegundoApellido_Clientes)
                     + ", FechaNacimiento_Clientes = " + connection.escape(ClienteData.FechaNacimiento_Clientes)
                     + ", Correo_Clientes = " + connection.escape(ClienteData.Correo_Clientes)
-                    + ", Contraseña_Clientes = " + connection.escape(ClienteData.Contraseña_Clientes)
+                    + ", Contrasena_Clientes = " + connection.escape(ClienteData.Contrasena_Clientes)
                     + ", NumeroTelefono_Clientes = " + connection.escape(ClienteData.NumeroTelefono_Clientes)
                     + ", Estado_Clientes = " + connection.escape(ClienteData.Estado_Clientes)
                     + " WHERE  	IdCliente_Clientes  =  " + connection.escape(ClienteData.IdCliente_Clientes)+";";
