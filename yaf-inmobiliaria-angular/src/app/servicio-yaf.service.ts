@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Inmueble } from './models/Inmueble';
+import { Cliente } from './models/Cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -54,5 +55,26 @@ export class ServicioYafService {
     return this.http.get(`${this.Url}/consulta/tercera/${id}/${fecha_ini}/${fecha_fin}`);
 
   }
+    // ////////////////////////////////////////////////////////
+  //             METODOS CLIENTES (Alejandro)
+  // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  getClientes() {
+    return this.http.get(`${this.Url}/cliente`);
+  }
+  getCliente_C(id: string) {
+    return this.http.get(`${this.Url}/Cliente/${id}`);
+  }
+  saveCliente(cliente : Cliente){
+    return this.http.post(`${this.Url}/Cliente`, cliente);
+  }
+  updateCliente(id, updatedCliente){
+    return this.http.put(`${this.Url}/Cliente`, updatedCliente);
+  }
+  getTipoDocumentoCliente() {
+    return this.http.get(`${this.Url}/tipdoc`);
+  }
+    // ////////////////////////////////////////////////////////
+  //                      FIN
+  // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 }
 

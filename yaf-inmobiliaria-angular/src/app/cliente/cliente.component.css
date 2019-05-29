@@ -417,3 +417,10 @@ MOVIL (XS revisamos en 320px)
 .btn-primary:not(:disabled):not(.disabled):active {
   background-color: #009500;
   border-color: transparent; }
+  .botones{
+    float:none;
+    text-align:center;
+  }
+  .alinear{
+    text-align: center;
+  }

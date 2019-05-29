@@ -106,6 +106,7 @@ export class InmuebleComponent implements OnInit {
     this.servi.getInmuebles().subscribe(
       res => {
         this.inmuebles = res;
+        console.log(this.inmuebles);
       },
       err => console.error(err)
     );

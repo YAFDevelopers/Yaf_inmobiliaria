@@ -3,11 +3,12 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-none d-lg-block">
         <a href="#">
-            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
         </a>
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,229 +30,264 @@
   </nav>
 
   <div class="container-fluid p-0" id="Crear">
-    <h4>Crear Cliente</h4>
+    <div class="container">
+      <h4>Crear Cliente</h4>
+    </div>
+
     <div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fas fa-signature"></i></span>
-      </div>
-      <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre"></textarea>
-    </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fas fa-signature"></i></span>
-      </div>
-      <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre"></textarea>
-    </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
-      </div>
-      <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido"></textarea>
-    </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
-      </div>
-      <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"></textarea>
-    </div>
-    <div class="input-group-prepend input-group">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de Documento</button>
-          <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Cedula de ciudadania</a>
-          <a class="dropdown-item" href="#">Cedula de extrangeria</a>
-          <a class="dropdown-item" href="#">Numero de identificación tributaria</a>
-          <div role="separator" class="dropdown-divider"></div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-signature"></i></span>
         </div>
-        <input type="number" class="form-control">
-    </div>
-    <div class="input-group-prepend input-group">
-      <label for="FechaNacimiento">Fecha de Nacimiento</label>
-      <p> </p>
-      <input type="date" id="FechaNacimiento">
-    </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre" name="PrimerNombre"
+          [(ngModel)]="NuevoCliente.PrimerNombre_Clientes"></textarea>
       </div>
-      <input type="email" class="form-control" placeholder="Email" required>
-    </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-signature"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre" name="SegundoNombre"
+          [(ngModel)]="NuevoCliente.SegundoNombre_Clientes"></textarea>
       </div>
-      <input type="password" class="form-control" placeholder="Contraseña" required>
-    </div>
-    <div class="input-group">
-    <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fas fa-phone-square"></i>></span>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido" name="PrimerApellido"
+          [(ngModel)]="NuevoCliente.PrimerApellido_Clientes"></textarea>
       </div>
-      <input type="password" class="form-control" placeholder="Numero de Telefono" required>
-    </div>
-    <div class="input-group">                                        
-      <label for="exampleInputEmail1">Estado Clientes</label><br/>
-      <select class="selectpicker" data-live-search="true">
-      <option data-tokens="ketchup mustard">Activo</option>
-      <option data-tokens="mustard">In Activo</option>
-      </select>                                        
-     </div>
-     <button type="button" class="btn btn-primary">Crear</button>  
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"
+          name="SegundoApellido" [(ngModel)]="NuevoCliente.SegundoApellido_Clientes"></textarea>
+      </div>
+      <div class="input-group-prepend input-group">
+        <label for="TipoDocumento">Tipo de Documento</label>
+        <select name="tipoDocumento" id="" [(ngModel)]="NuevoCliente.IdTipoDocumento_Clientes">
+          <option *ngFor="let TipoDocumento of TipoDocumentos"
+            value="{{TipoDocumento.IdtipoddeDocumento_TipodeDocumentos}}">
+            {{TipoDocumento.NombreTipodeDocumento_TipodeDocumentos}}
+          </option>
+        </select>
+        <input type="number" placeholder="Numero de Documento" [(ngModel)]="NuevoCliente.NumeroDocuemto_Clientes">
+      </div>
+      <div class="input-group-prepend input-group">
+        <label for="FechaNacimiento">Fecha de Nacimiento</label>
+        <p> </p>
+        <input type="date" id="FechaNacimiento" [(ngModel)]="NuevoCliente.FechaNacimiento_Clientes">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        </div>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="NuevoCliente.Correo_Clientes"
+          required>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+        </div>
+        <input type="password" class="form-control" placeholder="Contraseña"
+          [(ngModel)]="NuevoCliente.Contrasena_Clientes" required>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-phone-square"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Numero de Telefono"
+          [(ngModel)]="NuevoCliente.NumeroTelefono_Clientes" required>
+      </div>
+      <div class="input-group">
+        <label for="exampleInputEmail1">Estado Clientes</label><br />
+        <select class="selectpicker" data-live-search="true" [(ngModel)]="NuevoCliente.Estado_Clientes">
+          <option data-tokens="ketchup mustard" value="ACTIVO">Activo</option>
+          <option data-tokens="mustard" value="INACTIVO">In Activo</option>
+        </select>
+      </div>
+      <div class="botones">
+        <button type="button" class="btn btn-primary" (click)="CrearCliente()">Crear</button>
+      </div>
+
     </div>
 
     <div id="modificar">
+      <div class="container">
         <h4>Modificar Cliente</h4>
-        <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-signature"></i></span>
-            </div>
-            <textarea class="form-control" aria-label="PrimerNombre" placeholder="id"></textarea>
-          </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-signature"></i></span>
-          </div>
-          <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre"></textarea>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-signature"></i></span>
-          </div>
-          <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre"></textarea>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
-          </div>
-          <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido"></textarea>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
-          </div>
-          <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"></textarea>
-        </div>
-        <div class="input-group">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de Documento</button>
-              <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Cedula de ciudadania</a>
-              <a class="dropdown-item" href="#">Cedula de extrangeria</a>
-              <a class="dropdown-item" href="#">Numero de identificación tributaria</a>
-              <div role="separator" class="dropdown-divider"></div>
-            </div>
-            <input type="number" class="form-control">
-        </div>
-        <div class="input-group">
-          <label for="FechaNacimiento">Fecha de Nacimiento:</label>
-          <input type="date" id="FechaNacimiento">
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-          </div>
-          <input type="email" class="form-control" placeholder="Email" required>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-unlock"></i></span>
-          </div>
-          <input type="password" class="form-control" placeholder="Contraseña" required>
-        </div>
-        <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-phone-square"></i></span>
-          </div>
-          <input type="password" class="form-control" placeholder="Numero de Telefono" required>
-        </div>
-        <div class="input-group">                                        
-          <label for="exampleInputEmail1">Estado Clientes</label><br/>
-          <select class="selectpicker" data-live-search="true">
-          <option data-tokens="ketchup mustard">Activo</option>
-          <option data-tokens="mustard">In Activo</option>
-          </select>                                      
-         </div>
-         <button type="button" class="btn btn-primary">Actualizar</button>    
-        </div>
-    <h4>Listar Clientes</h4>
-    <div class="container table-container" id="listar">
-      <button type="button" class="btn btn-primary">Listar Clientes</button> 
-      <table class="table table-dark table-fixed">
-          <thead>
-            <tr>
-              <th scope="col">Tipo de Documento</th>
-              <th scope="col">Numero de Documento</th>
-              <th scope="col">Primer Nombre</th>
-              <th scope="col">Segundo Nombre</th>
-              <th scope="col">Primer Apellido</th>
-              <th scope="col">Segundo Apellido</th>
-              <th scope="col">Fecha de Nacimiento</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Contraseña</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Estado</th>
-              <th scope="col">Fecha de Registro</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="col">Cedula de ciudadania</th>
-              <th scope="col">1075489657</th>
-              <th scope="col">Camilo</th>
-              <th scope="col">Alejandro</th>
-              <th scope="col">Buitrago</th>
-              <th scope="col">Baquero</th>
-              <th scope="col">1998-30-10</th>
-              <th scope="col">Baquero1030@gmail.com</th>
-              <th scope="col">*****</th>
-              <th scope="col">3202711733</th>
-              <th scope="col">Activo</th>
-              <th scope="col">2019-10-13</th>
-            </tr>
+      </div>
 
-          </tbody>
-        </table>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="Id" placeholder="Id" name="Id"
+          [(ngModel)]="ActualizarCliente.IdCliente_Clientes"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-signature"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre" name="PrimerNombre"
+          [(ngModel)]="ActualizarCliente.PrimerNombre_Clientes"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-signature"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre" name="SegundoNombre"
+          [(ngModel)]="ActualizarCliente.SegundoNombre_Clientes"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido" name="PrimerApellido"
+          [(ngModel)]="ActualizarCliente.PrimerApellido_Clientes"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+        </div>
+        <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"
+          name="SegundoApellido" [(ngModel)]="ActualizarCliente.SegundoApellido_Clientes"></textarea>
+      </div>
+      <div class="input-group-prepend input-group alinear">
+        <label for="TipoDocumento">Tipo de Documento</label>
+        <select name="tipoDocumento" id="" [(ngModel)]="ActualizarCliente.IdTipoDocumento_Clientes">
+          <option *ngFor="let TipoDocumento of TipoDocumentos"
+            value="{{TipoDocumento.IdtipoddeDocumento_TipodeDocumentos}}">
+            {{TipoDocumento.NombreTipodeDocumento_TipodeDocumentos}}
+          </option>
+        </select>
+        <input type="number" placeholder="Numero de Documento" [(ngModel)]="ActualizarCliente.NumeroDocuemto_Clientes">
+      </div>
+      <div class="input-group-prepend input-group">
+        <label for="FechaNacimiento">Fecha de Nacimiento</label>
+        <p> </p>
+        <input type="date" id="FechaNacimiento" [(ngModel)]="ActualizarCliente.FechaNacimiento_Clientes">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        </div>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="ActualizarCliente.Correo_Clientes"
+          required>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+        </div>
+        <input type="password" class="form-control" placeholder="Contraseña"
+          [(ngModel)]="ActualizarCliente.Contrasena_Clientes" required>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-phone-square"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Numero de Telefono"
+          [(ngModel)]="ActualizarCliente.NumeroTelefono_Clientes" required>
+      </div>
+      <div class="input-group">
+        <label for="exampleInputEmail1">Estado Clientes</label><br />
+        <select class="selectpicker" data-live-search="true" [(ngModel)]="ActualizarCliente.Estado_Clientes">
+          <option data-tokens="ketchup mustard" value="ACTIVO">Activo</option>
+          <option data-tokens="mustard" value="INACTIVO">In Activo</option>
+        </select>
+      </div>
+      <div class="botones">
+        <button type="button" class="btn btn-primary botones" (click)="actualizarCliente()">Actualizar</button>
+      </div>
+
+    </div>
+    <div class="container">
+      <h4>Listar Clientes</h4>
+    </div>
+    <div class="container table-container" id="listar">
+      <table class="table table-dark table-fixed">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tipo de Documento</th>
+            <th scope="col">Numero de Documento</th>
+            <th scope="col">Primer Nombre</th>
+            <th scope="col">Segundo Nombre</th>
+            <th scope="col">Primer Apellido</th>
+            <th scope="col">Segundo Apellido</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Fecha de Registro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <th scope="col">{{cliente.IdCliente_Clientes }}</th>
+            <th *ngIf="cliente.IdTipoDocumento_Clientes == 1" scope="col">Cedula de ciudadania</th>
+            <th *ngIf="cliente.IdTipoDocumento_Clientes == 2" scope="col">Cedula de extrangeria</th>
+            <th *ngIf="cliente.IdTipoDocumento_Clientes == 3" scope="col">NIT</th>
+            <th scope="col">{{cliente.NumeroDocuemto_Clientes}}</th>
+            <th scope="col">{{cliente.PrimerNombre_Clientes}}</th>
+            <th scope="col">{{cliente.SegundoNombre_Clientes}}</th>
+            <th scope="col">{{cliente.PrimerApellido_Clientes}}</th>
+            <th scope="col">{{cliente.SegundoApellido_Clientes}}</th>
+            <th scope="col">{{cliente.FechaNacimiento_Clientes}}</th>
+            <th scope="col">{{cliente.Correo_Clientes}}</th>
+            <th scope="col">{{cliente.Contrasena_Clientes}}</th>
+            <th scope="col">{{cliente.NumeroTelefono_Clientes}}</th>
+            <th scope="col">{{cliente.Estado_Clientes}}</th>
+            <th scope="col">{{cliente.FechaRegistro_Clientes}}</th>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
     <div class="container table-container" id="buscar">
       <h4>Buscar Cliente</h4>
-      <input type="text" placeholder="id">
-      <button type="button" class="btn btn-primary">Buscar</button> 
-        <table class="table table-dark table-fixed">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Tipo de Documento</th>
-                <th scope="col">Numero de Documento</th>
-                <th scope="col">Primer Nombre</th>
-                <th scope="col">Segundo Nombre</th>
-                <th scope="col">Primer Apellido</th>
-                <th scope="col">Segundo Apellido</th>
-                <th scope="col">Fecha de Nacimiento</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Contraseña</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Fecha de Registro</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="col">1</th>
-                <th scope="col">Cedula de ciudadania</th>
-                <th scope="col">1075489657</th>
-                <th scope="col">Camilo</th>
-                <th scope="col">Alejandro</th>
-                <th scope="col">Buitrago</th>
-                <th scope="col">Baquero</th>
-                <th scope="col">1998-30-10</th>
-                <th scope="col">Baquero1030@gmail.com</th>
-                <th scope="col">*****</th>
-                <th scope="col">3202711733</th>
-                <th scope="col">Activo</th>
-                <th scope="col">2019-10-13</th>
-              </tr>
-    
-            </tbody>
-          </table>
+      <input type="text" placeholder="id" name="id" [(ngModel)]="idBusqueda" min="1">
+      <button type="button" class="btn btn-primary" (click)="obtenerClienteBuscar(idBusqueda)">Buscar</button>
+      <table class="table table-dark table-fixed">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tipo de Documento</th>
+            <th scope="col">Numero de Documento</th>
+            <th scope="col">Primer Nombre</th>
+            <th scope="col">Segundo Nombre</th>
+            <th scope="col">Primer Apellido</th>
+            <th scope="col">Segundo Apellido</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Fecha de Registro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">{{BuscarCliente.IdCliente_Clientes}}</th>
+            <th *ngIf="BuscarCliente.IdTipoDocumento_Clientes == 1" scope="col">Cedula de ciudadania</th>
+            <th *ngIf="BuscarCliente.IdTipoDocumento_Clientes == 2" scope="col">Cedula de extrangeria</th>
+            <th *ngIf="BuscarCliente.IdTipoDocumento_Clientes == 3" scope="col">NIT</th>
+            <th scope="col">{{BuscarCliente.NumeroDocuemto_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.PrimerNombre_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.SegundoNombre_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.PrimerApellido_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.SegundoApellido_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.FechaNacimiento_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.Correo_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.Contrasena_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.NumeroTelefono_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.Estado_Clientes}}</th>
+            <th scope="col">{{BuscarCliente.FechaRegistro_Clientes}}</th>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
-    
+
   </div>
 </div>
