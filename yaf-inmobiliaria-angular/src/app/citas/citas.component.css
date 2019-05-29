@@ -187,7 +187,15 @@
     color: #7F0912;
   }
   /*Crear*/
-
+  #inmu  {
+    width: 320px;
+  }
+  #agent  {
+    width: 320px;
+  }
+  #cliente  {
+    width:320px;
+  }
   @media (max-width:767px){
     .dropdown {
       margin-top: 10px;

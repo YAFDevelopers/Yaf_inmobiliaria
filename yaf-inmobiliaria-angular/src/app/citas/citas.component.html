@@ -13,19 +13,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="citas#about">Bienvenidos</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#about">Bienvenidos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="citas#crear">Crear</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#crear">Crear</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="citas#education">Modificar</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#education">Modificar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="citas#skills">Listar</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#skills">Listar</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="citas#listar">Busca Personalizado</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#listar">Busca Personalizado</a>
         </li>
       </ul>
     </div>
@@ -42,76 +42,16 @@
       </div>
     </section>
     <hr class="m-0">
-    <!--Crear-->
-    <!--
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="crear">
-      <div class="w-100">
-        <h2 class="mb-5">Crear</h2>
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="card">
-              <img class="card-img-top" src="../../assets/image/fondoCasa.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="container " id="crear">
-                  <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas">
-                    <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
-                        {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
-                    </option>
-                  </select>
-
-                  <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas">
-                    <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
-                      {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}  
-                    </option>
-                  </select>
-
-                  <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas">
-                    <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
-                     {{inm.NombreInmueble_Inmuebles}}   
-                    </option>
-                  </select>
-
-                </div>
-
-                <div class="container" id ="crear2">
-
-                  <label class="tiempo " for="#">Fecha En la que desea la cita</label>
-                  <form action="#" >
-                    <input class="fecha" type="date" name="fecn" [(ngModel)] = "nuevacita.Fecha_Citas">
-                  </form>
-                  <label class="tiempo " for="#">Hora  En la que desea la cita</label>
-                  <form action="#">
-                    <input type="time" id="appt" name="horn"
-                    min="9:00" max="18:00" required [(ngModel)] = "nuevacita.Hora_Citas">
-                  </form>
-
-                </div>
-                <div class="input-group mb-2 mr-sm-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="fas fa-signature"></i>
-                    </div>
-                  </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "nuevacita.Estado_Citas" naame="Estado">
-              </div>
-                  <button class="btn btn-primary bcrear" (click)= "nuevacitas()">
-                      Crear
-                  </button>
-            </div>
-          </div> 
-         </div>
-       </div>      
-     </section>
--->
 <main class="p-y-1">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h2 class="m-b-2">Formulario de Cliente</h2>
+                <h2 class="m-b-2" id="crear">Formulario de Cliente</h2>
                 <form action="#">
                     <div class="form-group row">
                         <label for="nombre" class="col-md-4 col-form-label">Cliente</label>
                         <div class="col-md-8">
-                            <select name="client" id="client" [(ngModel)] = "nuevacita.IdCliente_Citas" data-toggle="tooltip" data-placement="top" title="Ingrese su nombre completo">
+                            <select name="client" id="cliente" [(ngModel)] = "nuevacita.IdCliente_Citas"  class="form-control">
                                 <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
                                     {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
                                 </option>
@@ -120,16 +60,16 @@
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-md-4 col-form-label">Agente</label>
-                        <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas">
+                        <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas"  class="form-control">
                             <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
                                   {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}
                             </option>
                         </select>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row ">
                         <label for="mensaje" class="col-md-4 col-form-label">Inmueble</label>
 
-                        <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas">
+                        <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas"   class="form-control" >
                             <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
                                 {{inm.NombreInmueble_Inmuebles}}  
                             </option>
