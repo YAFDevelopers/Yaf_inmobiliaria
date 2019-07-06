@@ -8,10 +8,7 @@ AgenteModel.getAgentes = function (callback)
 {
     if (connection)
     {
-        var sql = "SELECT agentes.IdAgente_Agentes,tipodedocumentos.NombreTipodeDocumento_TipodeDocumentos,agentes.NumeroDocumento_Agentes,agentes.PrimerNombre_Agentes,agentes.SegundoNombre_Agentes,agentes.PrimerApellido_Agentes,agentes.SegundoApellido_Agentes,agentes.FechaNacimiento_Agentes, " 
-                +"agentes.Correo_Agentes,agentes.Contrasena_Agentes,agentes.NumeroTelfono_Agentes,agentes.Estado_Agentes,agentes.FechaRegistro_Agentes "  
-                +"FROM agentes,tipodedocumentos " 
-                +"WHERE tipodedocumentos.IdtipoddeDocumento_TipodeDocumentos=agentes.IdTipoDocumento_Agentes; ";
+        var sql = "SELECT * FROM Agentes; ";
         
         connection.query(sql, function (error, rows) 
         {

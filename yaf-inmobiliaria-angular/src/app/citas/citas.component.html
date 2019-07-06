@@ -3,11 +3,12 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-none d-lg-block">
         <a href="#">
-            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
         </a>
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -16,20 +17,20 @@
           <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#about">Bienvenidos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#crear">Crear</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#crear">Agendar Cita</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#education">Modificar</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#skills">Listar cita</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#skills">Listar</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#listar">Busca Personalizado</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="citas#listar">Buscar y Actualizar</a>
         </li>
       </ul>
     </div>
   </nav>
+  <!-----------------------------------------------------------------------------------------------------------
+  AGENDAR 
+  -------------------------------------------------------------------------------------------------------- -->
   <div class="container-fluid p-0">
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
@@ -38,199 +39,232 @@
         </h1>
         <div class="subheading mb-5 animated bounceInRight">Cada dia mejorando mas, para que tu siempre estes comodo·
         </div>
-        <p class="lead mb-5 animated bounceInRight">En este espacio podras agendar una cita,modificar o hacer busquedas para que puedas organizar mejor tu tiempo, mas secar de ti.</p>
+        <p class="lead mb-5 animated bounceInRight">En este espacio podras agendar una cita,modificar o hacer busquedas
+          para que puedas organizar mejor tu tiempo, mas secar de ti.</p>
       </div>
     </section>
     <hr class="m-0">
-<main class="p-y-1">
-    <div class="container">
+    <main class="p-y-1">
+      <div class="container">
         <div class="row">
-            <div class="col-md-8">
-              <div class="container">
-                  <h2 class="m-b-2" id="crear">Crear</h2>
-              </div>
-                <form action="#">
-                    <div class="form-group row">
-                        <label for="nombre" class="col-md-4 col-form-label">Cliente</label>
-                        <div class="col-md-8">
-                            <select name="client" id="cliente" [(ngModel)] = "nuevacita.IdCliente_Citas"  class="form-control">
-                                <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
-                                    {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label">Agente</label>
-                        <select name="agent" id="agent" [(ngModel)] = "nuevacita.IdAgente_Citas"  class="form-control">
-                            <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
-                                  {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group row ">
-                        <label for="mensaje" class="col-md-4 col-form-label">Inmueble</label>
-
-                        <select name="inmu" id="inmu" [(ngModel)] = "nuevacita.IdInmueble_Citas"   class="form-control" >
-                            <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
-                                {{inm.NombreInmueble_Inmuebles}}  
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group row">
-                        <label for="mensaje" class="col-md-4 col-form-label">Estado</label>
-
-                        <div class="col-md-8">
-                            <input type="text"  class="form-control" rows="5" id="mensaje" name="mensaje" placeholder="Ingrese su mensaje" data-toggle="tooltip" data-placement="top" title="Ingrese un mensaje" [(ngModel)] = "nuevacita.Estado_Citas" name="Estado">
-                           
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                            <label for="mensaje" class="col-md-4 col-form-label">Fecha</label>
-
-                            <div class="col-md-8">
-                                <input type="date"  class="form-control" rows="5" id="mensaje" name="fecha" placeholder="Ingrese su mensaje" data-toggle="tooltip" data-placement="top" title="Ingrese un mensaje" [(ngModel)] = "nuevacita.Fecha_Citas">
-                               
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                                <label for="mensaje" class="col-md-4 col-form-label">Hora</label>
-                                
-                                <form action="#">
-                                        <input type="time" id="appt" name="horn"
-                                        min="9:00" max="18:00" required [(ngModel)] = "nuevacita.Hora_Citas" rows="5">
-                                </form>
-                            </div>                     
-                    <div class="form-group row">
-                        <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary"(click)= "nuevacitas()">Crear</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4">
-              <img src="../../assets/image/familia.svg" alt="">
-            </div>
-        </div>
-    </div>
-</main>
-<!--Modificar-->
-    <hr class="m-0">
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Modificar</h2>
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-
-              <div class="card m">
-                  <img class="card-img-top" src="../../assets/image/presentacion.svg" alt="Card image cap">
-                  <div class="card-body">
-                   
+          <div class="col-md-8">
             <div class="container">
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                          <i class="fas fa-signature"></i>
-                      </div>
-                    </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="ID Cita" [(ngModel)] = "Actualizarcita.IdCita_Citas">
-                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "Actualizarcita.Estado_Citas">
-                </div>
-              </div>
-              <div class="container">
-                <select name="client" id="client" [(ngModel)] = "Actualizarcita.IdCliente_Citas">
-                  <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}"  >
-                    {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}} {{cli.SegundoApellido_Clientes}} 
+              <h2 class="m-b-2" id="crear">Agendar cita</h2>
+            </div>
+            <form action="#">
+              <div class="form-group row">
+                <label for="nombre" class="col-md-4 col-form-label">Cliente</label>
+                <select name="nombre" id="cliente" [(ngModel)]="nuevacita.IdCliente_Citas" class="form-control">
+                  <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}">
+                    {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}}
+                    {{cli.SegundoApellido_Clientes}}
                   </option>
                 </select>
               </div>
-              <select name="agent" id="agent" [(ngModel)] = "Actualizarcita.IdAgente_Citas">
-                <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}" >
-                  {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}} {{age.SegundoApellido_Agentes}}  
-                </option>
-              </select>
-              <select name="inmu" id="inmu" [(ngModel)] = "Actualizarcita.IdInmueble_Citas">
-                <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}" >
-                 {{inm.NombreInmueble_Inmuebles}}   
-                </option>
-              </select>
-          </div>
-          <div class="container">
-            <label class="tiempo " for="#">Fecha En la que desea la cita</label>
-            <form action="#" >
-              <input class="fecha" type="date" name="fec" [(ngModel)] = "Actualizarcita.Fecha_Citas">
-            </form>
-             <label class="tiempo " for="#">Hora  En la que desea la cita</label>
-            <form action="#">
-            <input type="time" id="appt" name="hor"
-              min="9:00" max="18:00" required [(ngModel)] = "Actualizarcita.Hora_Citas">
-            </form>
-          </div>
-                   <button class="btn btn-primary" (click)= "actualizarcitas()">
-                     Actualizar
-                   </button>
-                    
-                  </div>
-                </div>
 
+              <div class="form-group row">
+                <label for="agent" class="col-md-4 col-form-label">Agente</label>
+                <select name="agent" id="agent" [(ngModel)]="nuevacita.IdAgente_Citas" class="form-control">
+                  <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}">
+                    {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}}
+                    {{age.SegundoApellido_Agentes}}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group row ">
+                <label for="inmu" class="col-md-4 col-form-label">Inmueble</label>
+                <select name="inmu" id="inmu" [(ngModel)]="nuevacita.IdInmueble_Citas" class="form-control">
+                  <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}">
+                    {{inm.NombreInmueble_Inmuebles}}
+                  </option>
+                </select>
+              </div>
+
+              <!-- <div class="form-group row ">
+                <label for="estado" class="col-md-4 col-form-label">Estado</label>
+                <select name="estado" id="inmu" [(ngModel)]="nuevacita.Estado_Citas" class="form-control">
+                  <option value="ACTIVO">ACTIVO</option>
+                  <option value="INACTIVO">INACTIVO</option>
+                </select>
+              </div> -->
+
+
+              <div class="form-group row">
+                <label for="mensaje" class="col-md-4 col-form-label">Fecha</label>
+
+                <form action="#">
+                  <input type="date" class="form-control" rows="5" id="mensaje" name="fecha"
+                    placeholder="Ingrese su mensaje" data-toggle="tooltip" data-placement="top"
+                    title="Ingrese un mensaje" [(ngModel)]="nuevacita.Fecha_Citas">
+                </form>
+
+              </div>
+              <div class="form-group row">
+                <label for="mensaje" class="col-md-4 col-form-label">Hora</label>
+
+                <form action="#">
+                  <input type="time" id="appt" name="horn" min="9:00" max="18:00" required
+                    [(ngModel)]="nuevacita.Hora_Citas" rows="5">
+                </form>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-8 offset-md-4">
+                  <button type="submit" class="btn btn-primary" (click)="nuevacitas()">Crear</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <img src="../../assets/image/familia.svg" alt="">
+          </div>
+        </div>
       </div>
-      </div>
-    </section>
+    </main>
+
+    <!--Modificar-->
+    <hr class="m-0">
+    
     <hr class="m-0">
 
-<!--Buscar-->
+    <!--Buscar-->
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="listar">
       <div class="w-100">
-        <h2 class="mb-5">Buscar</h2>
+        <h2 class="mb-5">Buscar y Actualizar</h2>
         <div class="input-group mb-2 mr-sm-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text">
-                  <i class="fas fa-signature"></i>
-              </div>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fas fa-signature"></i>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id Cita" [(ngModel)]="idbuscar">
           </div>
-          <button type="button" class="btn btn-primary" (click)="citatraeruna()">Buscar</button>
-          <div class="table-container table-dark">
-            <table class="table-rwd">
-              <tr>
-              
-                <th>id</th>
-                <th>Estado</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Agente</th>
-                <th>Cliente</th>
-                <th>Inmueble</th>
-                <th>registro</th>
-                
-              </tr>
-              <tr>        
-                <td>{{Buscarcita.IdCita_Citas}}</td>
-                <td>{{Buscarcita.Estado_Citas}}</td>
-                <td>{{Buscarcita.Fecha_Citas}}</td>
-                <td>{{Buscarcita.Hora_Citas}}</td>
-                <td>{{Buscarcita.nombreAgente}}</td>
-                <td>{{Buscarcita.nombreCliente}}</td>
-                <td>{{Buscarcita.NombreInmueble_Inmuebles}}</td>
-                <td>{{Buscarcita.FechaRegistro_Citas}}</td>
-              </tr>
-          
-            </table>
-          </div>
+          <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id Cita"
+            [(ngModel)]="idbuscar">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="citatraeruna()">Buscar</button>
+        <div class="table-container table-dark">
+          <table class="table-rwd">
+            <tr>
+
+              <th>id</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Agente</th>
+              <th>Cliente</th>
+              <th>Inmueble</th>
+              <th>Registro</th>
+              <th>Actualizar</th>
+
+            </tr>
+            <tr>
+              <td>{{Buscarcita.IdCita_Citas}}</td>
+              <td>{{Buscarcita.Estado_Citas}}</td>
+              <td>{{Buscarcita.Fecha_Citas}}</td>
+              <td>{{Buscarcita.Hora_Citas}}</td>
+              <td>{{Buscarcita.nombreAgente}}</td>
+              <td>{{Buscarcita.nombreCliente}}</td>
+              <td>{{Buscarcita.NombreInmueble_Inmuebles}}</td>
+              <td>{{Buscarcita.FechaRegistro_Citas}}</td>
+              <td><button (click)="buscarCitaActualizar(Buscarcita.IdCita_Citas)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ActualizarCita">
+                  Actualizar
+                </button></td>
+            </tr>
+
+          </table>
+        </div>
       </div>
     </section>
 
+    <!-- Modal Actualizar cita  -->
+    <div class="modal fade" id="ActualizarCita" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Actualizar Cita</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="#">
+              <div class="form-group row">
+                <label for="nombre" class="col-md-4 col-form-label">Cliente</label>
+                <select name="nombre" id="cliente" [(ngModel)]="Actualizarcita.IdCliente_Citas" class="form-control">
+                  <option *ngFor="let cli of cliente" value="{{cli.IdCliente_Clientes}}">
+                    {{cli.PrimerNombre_Clientes}} {{cli.SegundoNombre_Clientes}} {{cli.PrimerApellido_Clientes}}
+                    {{cli.SegundoApellido_Clientes}}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group row">
+                <label for="agent" class="col-md-4 col-form-label">Agente</label>
+                <select name="agent" id="agent" [(ngModel)]="Actualizarcita.IdAgente_Citas" class="form-control">
+                  <option *ngFor="let age of agente" value="{{age.IdAgente_Agentes}}">
+                    {{age.PrimerNombre_Agentes}} {{age.SegundoNombre_Agentes}} {{age.PrimerApellido_Agentes}}
+                    {{age.SegundoApellido_Agentes}}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group row ">
+                <label for="inmu" class="col-md-4 col-form-label">Inmueble</label>
+                <select name="inmu" id="inmu" [(ngModel)]="Actualizarcita.IdInmueble_Citas" class="form-control">
+                  <option *ngFor="let inm of inmueble" value="{{inm.IdInmueble_Inmuebles}}">
+                    {{inm.NombreInmueble_Inmuebles}}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group row ">
+                    <label for="estado" class="col-md-4 col-form-label">Estado</label>
+                    <select name="estado" id="inmu" [(ngModel)]="Actualizarcita.Estado_Citas" class="form-control">
+                      <option value="ACTIVO">ACTIVO</option>
+                      <option value="INACTIVO">INACTIVO</option>
+                    </select>
+                  </div>
+
+
+              <div class="form-group row">
+                <label for="mensaje" class="col-md-4 col-form-label">Fecha</label>
+
+                <form action="#">
+                  <input type="date" class="form-control" rows="5" id="mensaje" name="fecha"
+                    placeholder="Ingrese su mensaje" data-toggle="tooltip" data-placement="top"
+                    title="Ingrese un mensaje" [(ngModel)]="Actualizarcita.Fecha_Citas">
+                </form>
+
+              </div>
+              <div class="form-group row">
+                <label for="mensaje" class="col-md-4 col-form-label">Hora</label>
+
+                <form action="#">
+                  <input type="time" id="appt" name="horn" min="9:00" max="18:00" required
+                    [(ngModel)]="Actualizarcita.Hora_Citas" rows="5">
+                </form>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" (click)="actualizarcitas()">Actualizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <hr class="m-0">
-<!--Listar-->
+
+    <!--Listar-->
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
       <div class="w-100 as">
-        <h2 class="mb-5">Listar</h2>
-        <button type="button" class="btn btn-primary" (click)= "citastraer();">Buscar</button>
+        <h2 class="mb-5">Listar cita</h2>
+        <button type="button" class="btn btn-primary" (click)="citastraer();">Buscar</button>
         <div class="table-container">
           <table class="table-rwd">
             <tr>
-            
+
               <th>id</th>
               <th>Fecha</th>
               <th>Hora</th>
@@ -239,8 +273,8 @@
               <th>Agente</th>
               <th>Inmueble</th>
               <th>Fecha de Registro</th>
-              
-            </tr>  
+
+            </tr>
             <tr *ngFor="let cita of citas">
               <td>{{cita.IdCita_Citas}}</td>
               <td>{{cita.Fecha_Citas}} </td>
@@ -250,11 +284,10 @@
               <td>{{cita.nombreAgente}} </td>
               <td>{{cita.NombreInmueble_Inmuebles}} </td>
               <td>{{cita.FechaRegistro_Citas}} </td>
-            </tr>           
+            </tr>
           </table>
         </div>
       </div>
     </section>
   </div>
 </div>
-

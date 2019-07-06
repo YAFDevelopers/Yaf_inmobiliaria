@@ -75,7 +75,7 @@ export class InformesComponent implements OnInit {
 
   generarInforme2() {
     if (this.informeAgenteId != "" && this.informeAgenteFechaIni != "" && this.informeAgenteFechaFin != "") {
-      this.servi.informe2(this.informeAgenteId, this.informeAgenteFechaIni, this.informeAgenteFechaFin).subscribe(
+      this.servi.informe3(this.informeAgenteId, this.informeAgenteFechaIni, this.informeAgenteFechaFin).subscribe(
         res => {
           this.informeAgenteArray = res;
         },
@@ -104,7 +104,7 @@ export class InformesComponent implements OnInit {
 
   generarInforme3() {
     if (this.informeClienteId != "" && this.informeClienteFechaIni != "" && this.informeClienteFechaFin != "") {
-      this.servi.informe3(this.informeClienteId, this.informeClienteFechaIni, this.informeClienteFechaFin).subscribe(
+      this.servi.informe2(this.informeClienteId, this.informeClienteFechaIni, this.informeClienteFechaFin).subscribe(
         res => {
           this.informeClienteArray = res;
           console.log(this.informeClienteArray);

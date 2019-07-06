@@ -107,12 +107,24 @@ export class CitasComponent implements OnInit {
       }
     );
   }
+  buscarCitaActualizar(id:string){
+    this.servi.unacita(id).subscribe(
+      res => {
+        this.Actualizarcita = res[0];
+        console.log(this.Actualizarcita);
+      },
+      err =>{
+        console.error(err);
+      }
+    );
+  }
   actualizarcitas()  {
       console.log(this.Actualizarcita);
       delete this.Actualizarcita.FechaRegistro_Citas;
       this.servi.modificarcita(this.Actualizarcita).subscribe(
         res =>  {
             console.log(res);
+            location.reload();
         },
         err =>  {
             console.error(err);
@@ -123,6 +135,7 @@ export class CitasComponent implements OnInit {
     console.log(this.nuevacita);
     delete this.nuevacita.FechaRegistro_Citas;
     delete this.nuevacita.IdCita_Citas;
+    this.nuevacita.Estado_Citas="ACTIVO";
     this.servi.crearcita(this.nuevacita).subscribe(
       res =>  {
         console.log(res);
