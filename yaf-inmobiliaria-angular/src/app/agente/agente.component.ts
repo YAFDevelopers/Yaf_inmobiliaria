@@ -98,6 +98,17 @@ export class AgenteComponent implements OnInit {
       }
     )
   }
+  buscarAgenteActualizar(id: string){
+    this.servi.unaagentes(id).subscribe(
+      res =>  {
+        this.Actualizaragente = res[0];
+        console.log(this.actualizaragente);
+      },
+      err =>  {
+        console.error(err);
+      }
+    ); 
+  }
   actualizaragente()  {
     console.log(this.Actualizaragente);
     delete this.Actualizaragente.FechaRegistro_Agentes;
@@ -114,6 +125,7 @@ export class AgenteComponent implements OnInit {
     console.log(this.Nuevoagente);
     delete this.Nuevoagente.FechaRegistro_Agentes;
     delete this.Nuevoagente.IdAgente_Agentes;
+    this.Nuevoagente.Estado_Agentes = "ACTIVO";
     this.servi.crearagente(this.Nuevoagente).subscribe(
       res =>  {
         console.log(res);

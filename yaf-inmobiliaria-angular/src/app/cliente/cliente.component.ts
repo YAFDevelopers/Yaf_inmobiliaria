@@ -122,7 +122,23 @@ export class ClienteComponent implements OnInit {
       }
     })
   }
-  
+  buscarClienteActualizar(id:string){
+    this.servi.getCliente_C(id).subscribe(
+      res => {
+        this.ActualizarCliente = res[0];
+      },
+      err => {
+        // console.error(err);
+        console.log(this.idBusqueda);
+        Swal.fire(
+          'Cliente no encontrado',
+          'Revise la información',
+          'error'
+          
+        );
+      }
+    );
+  }
   actualizarCliente() {
     Swal.fire({
       title: '¿Esta seguro de los datos para actualizar el Cliente?',
@@ -167,7 +183,7 @@ export class ClienteComponent implements OnInit {
           // console.error(err);
           console.log(this.idBusqueda);
           Swal.fire(
-            'Inmueble no encontrado',
+            'Cliente no encontrado',
             'Revise la información',
             'error'
             

@@ -1,122 +1,303 @@
 <div class="cuerpo" id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-none d-lg-block">
-          <a href="#">
-              <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-          </a>
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#about">Bienvenidos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#crear">Crear</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#education">Modificar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#skills">Busca Personalizado</a>
-          </li>
-            <li class="nav-item">
-            <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#listar">listar</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container-fluid p-0">
-      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-        <div class="w-100">
-          <h1 class="mb-0 animated pulse">Pestaña dedicada para
-            <span class="text-primary"> Agentes </span>
-          </h1>
-          <div class="subheading mb-5 animated bounceInRight">Nuestros agentes son los encargados de mostrar nuestros inmuebles·
-          </div>
-          <p class="lead mb-5 animated bounceInRight">Busca,creo o modifica un agente.</p>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-none d-lg-block">
+        <a href="#">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        </a>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#about">Bienvenidos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#crear">Crear</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#skills">Busca Personalizado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="agente#listar">listar</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid p-0">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0 animated pulse">Pestaña dedicada para
+          <span class="text-primary"> Agentes </span>
+        </h1>
+        <div class="subheading mb-5 animated bounceInRight">Nuestros agentes son los encargados de mostrar nuestros
+          inmuebles·
         </div>
-      </section>
-      <hr class="m-0">
-      <!--Crear-->
+        <p class="lead mb-5 animated bounceInRight">Busca,creo o modifica un agente.</p>
+      </div>
+    </section>
+    <hr class="m-0">
+    <!--Crear-->
 
-      <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="crear">
-        <div class="w-100">
-          <h2 class="mb-5">Crear</h2>
-          <form class="form-inline">
-            <div class="container">
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="crear">
+      <div class="w-100">
+        <h2 class="mb-5">Crear</h2>
+        <form>
 
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="fas fa-signature"></i>
-                      </div>
-                    </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "Nuevoagente.Estado_Agentes" name="estado" >
-                  </div>
-
-              <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                      <i class="fas fa-signature"></i>
-                  </div>
-                </div>
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Primer Nombre" [(ngModel)] = "Nuevoagente.PrimerNombre_Agentes" name="nombrep">
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-signature"></i>
               </div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Primer Nombre"
+              [(ngModel)]="Nuevoagente.PrimerNombre_Agentes" name="nombrep">
+          </div>
 
-                <div class="input-group mb-2 mr-sm-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fas fa-signature"></i>
-                    </div>
-                  </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Segundo nombre"  [(ngModel)] = "Nuevoagente.SegundoNombre_Agentes" name="snombre">
-                </div>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-signature"></i>
               </div>
-              <div class="container">
-                  <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="fas fa-rainbow"></i>
-                      </div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Segundo nombre"
+              [(ngModel)]="Nuevoagente.SegundoNombre_Agentes" name="snombre">
+          </div>
+
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-rainbow"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Primer Apellido"
+              [(ngModel)]="Nuevoagente.PrimerApellido_Agentes" name="papellido">
+          </div>
+
+
+          <div class="sn input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-rainbow"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Segundo Apellido"
+              [(ngModel)]="Nuevoagente.SegundoApellido_Agentes" name="sapellido">
+          </div>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="far fa-copyright"></i>
+              </div>
+            </div>
+
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="# Identificación"
+              [(ngModel)]="Nuevoagente.NumeroDocumento_Agentes" name="identificacion">
+
+
+            <select name="agent" id="agent" [(ngModel)]="Nuevoagente.IdTipoDocumento_Agentes" name="idtificacion">
+              <option *ngFor="let tipd of TipodeDocumento" value="{{tipd.IdtipoddeDocumento_TipodeDocumentos}}">
+                {{tipd.NombreTipodeDocumento_TipodeDocumentos}}
+              </option>
+            </select>
+          </div>
+
+          <div class="fecha">
+            <label for="">Fecha de Nacimiento</label>
+            <input type="date" name="fecha" id="fecha" [(ngModel)]="Nuevoagente.FechaNacimiento_Agentes" name="fecha">
+          </div>
+
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-mobile"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Numero de Celular"
+              [(ngModel)]="Nuevoagente.NumeroTelfono_Agentes" name="numero">
+          </div>
+
+
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-mobile"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Correo"
+              [(ngModel)]="Nuevoagente.Correo_Agentes" name="correo">
+          </div>
+
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-mobile"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password"
+              [(ngModel)]="Nuevoagente.Contrasena_Agentes" name="contrasena">
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary mb-2" (click)="nuevoagente()">Crear</button>
+        </form>
+
+      </div>
+    </section>
+    <hr class="m-0">
+
+    <!--Modificar-->
+  
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100 as">
+        <h2 class="mb-5">Buscar</h2>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fas fa-signature"></i>
+            </div>
+          </div>
+          <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id Cita"
+            [(ngModel)]="idbuscar">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="agentestraeruna()">Buscar</button>
+        <div class="table-container">
+          <table class="table-rwd">
+            <tr>
+
+              <th>id</th>
+              <th>Tipo de Documento</th>
+              <th>Numero de Documento</th>
+              <th>Primer Nombre</th>
+              <th>Segundo Nombre</th>
+              <th>Primer Apellido</th>
+              <th>Segundo Apellido</th>
+              <th>Fecha de Nacimiento</th>
+              <th>Correo</th>
+              <th>Contraseña</th>
+              <th>Telefono</th>
+              <th>Estados</th>
+              <th>Registro</th>
+              <th>Actualizar</th>
+
+            </tr>
+            <tr>
+
+              <td>{{buscaragente.IdAgente_Agentes}}</td>
+              <td>{{buscaragente.IdTipoDocumento_Agentes}}</td>
+              <td>{{buscaragente.NumeroDocumento_Agentes}}</td>
+              <td>{{buscaragente.PrimerNombre_Agentes}}</td>
+              <td>{{buscaragente.SegundoNombre_Agentes}}</td>
+              <td>{{buscaragente.PrimerApellido_Agentes}}</td>
+              <td>{{buscaragente.SegundoApellido_Agentes}}</td>
+              <td>{{buscaragente.FechaNacimiento_Agentes}}</td>
+              <td>{{buscaragente.Correo_Agentes}}</td>
+              <td>{{buscaragente.Contrasena_Agentes}}</td>
+              <td>{{buscaragente.NumeroTelfono_Agentes}}</td>
+              <td>{{buscaragente.Estado_Agentes}}</td>
+              <td>{{buscaragente.FechaRegistro_Agentes}}</td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#actualizarAgente" (click)="buscarAgenteActualizar(buscaragente.IdAgente_Agentes)">
+                  Actualizar
+                </button></td>
+            </tr>
+          </table>
+          <!-- ----------------------
+          MODAL
+          -------------------------- -->
+          <div class="modal fade" id="actualizarAgente" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Actualizar Agente</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group mb-2 mr-sm-2">
+                      <label for="estado" class="col-md-4 col-form-label" style="color:black">Estado</label>
+                      <select name="estado" id="inmu" class="form-control" [(ngModel)]="Actualizaragente.Estado_Agentes">
+                        <option value="ACTIVO">ACTIVO</option>
+                        <option value="INACTIVO">INACTIVO</option>
+                      </select>
                     </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Primer Apellido" [(ngModel)] = "Nuevoagente.PrimerApellido_Agentes" name="papellido">
-                  </div>
 
+                    <div class="input-group mb-2 mr-sm-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-signature"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                        placeholder="Primer Nombre" [(ngModel)]="Actualizaragente.PrimerNombre_Agentes" name="nombrep">
+                    </div>
 
-                  <div class="sn input-group mb-2 mr-sm-2">
+                    <div class="input-group mb-2 mr-sm-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-signature"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                        placeholder="Segundo nombre" [(ngModel)]="Actualizaragente.SegundoNombre_Agentes" name="snombre">
+                    </div>
+
+                    <div class="input-group mb-2 mr-sm-2">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="fas fa-rainbow"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Segundo Apellido" [(ngModel)] = "Nuevoagente.SegundoApellido_Agentes" name="sapellido">
-                  </div>
-                </div>
-                <div class="container">
-                    <div class="input-group mb-2 mr-sm-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="far fa-copyright"></i>
-                          </div>
-                        </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="# Identificación" [(ngModel)] = "Nuevoagente.NumeroDocumento_Agentes" name="identificacion">
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                        placeholder="Primer Apellido" [(ngModel)]="Actualizaragente.PrimerApellido_Agentes" name="papellido">
                     </div>
 
-                    <select name="agent" id="agent" [(ngModel)] = "Nuevoagente.IdTipoDocumento_Agentes" name="idtificacion">
-                      <option *ngFor="let tipd of TipodeDocumento" value="{{tipd.IdtipoddeDocumento_TipodeDocumentos}}" >
-                        {{tipd.NombreTipodeDocumento_TipodeDocumentos}}   
-                      </option>
-                    </select>
-                  </div>
-                  <div class="container">    
+
+                    <div class="sn input-group mb-2 mr-sm-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-rainbow"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                        placeholder="Segundo Apellido" [(ngModel)]="Actualizaragente.SegundoApellido_Agentes"
+                        name="sapellido">
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="far fa-copyright"></i>
+                        </div>
+                      </div>
+
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                        placeholder="# Identificación" [(ngModel)]="Actualizaragente.NumeroDocumento_Agentes"
+                        name="identificacion">
+
+
+                      <select name="agent" id="agent" [(ngModel)]="Actualizaragente.IdTipoDocumento_Agentes"
+                        name="idtificacion">
+                        <option *ngFor="let tipd of TipodeDocumento"
+                          value="{{tipd.IdtipoddeDocumento_TipodeDocumentos}}">
+                          {{tipd.NombreTipodeDocumento_TipodeDocumentos}}
+                        </option>
+                      </select>
+                    </div>
+
                     <div class="fecha">
-                      <label for="">Fecha de Nacimiento</label>
-                      <input type="date" name="fecha" id="fecha"  [(ngModel)] = "Nuevoagente.FechaNacimiento_Agentes" name="fecha">
+                      <label for="" style="color:black">Fecha de Nacimiento</label>
+                      <input type="date" name="fecha" id="fecha" [(ngModel)]="Actualizaragente.FechaNacimiento_Agentes"
+                        name="fecha">
                     </div>
 
                     <div class="input-group mb-2 mr-sm-2">
@@ -125,229 +306,51 @@
                           <i class="fas fa-mobile"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Numero de Celular" [(ngModel)] = "Nuevoagente.NumeroTelfono_Agentes" name="numero">
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                        placeholder="Numero de Celular" [(ngModel)]="Actualizaragente.NumeroTelfono_Agentes" name="numero">
                     </div>
-                  </div> 
-                  <div class="container">
-                    <div class="input-group mb-2 mr-sm-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="fas fa-mobile"></i>
-                          </div>
-                        </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Correo" [(ngModel)] = "Nuevoagente.Correo_Agentes" name="correo">
-                    </div>
+
 
                     <div class="input-group mb-2 mr-sm-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="fas fa-mobile"></i>
-                          </div>
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-mobile"></i>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password" [(ngModel)] = "Nuevoagente.Contrasena_Agentes" name="contrasena">
-                    </div>
-                        
-                  </div>
-
-              <button type="submit" class="btn btn-primary mb-2" (click)= "nuevoagente()">Crear</button>
-            </form>
-       
-        </div>
-      </section>
-      <hr class="m-0">
-
-  <!--Modificar-->
-      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-        <div class="w-100">
-          <h2 class="mb-5">Modificar</h2>
-          <form class="form-inline">
-
-            <div class="container">
-
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                          <i class="fas fa-signature"></i>
                       </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Correo"
+                        [(ngModel)]="Actualizaragente.Correo_Agentes" name="correo">
                     </div>
-                    <input name ="ID" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="ID Agente" [(ngModel)] = "Actualizaragente.IdAgente_Agentes">
-                </div>
 
-                <div class="input-group mb-2 mr-sm-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fas fa-signature"></i>
+                    <div class="input-group mb-2 mr-sm-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-mobile"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password"
+                        [(ngModel)]="Actualizaragente.Contrasena_Agentes" name="contrasena">
                     </div>
-                  </div>
-                  <input name ="nombrep" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Primer Nombre" [(ngModel)] = "Actualizaragente.PrimerNombre_Agentes">
-                </div>
-            
-                <div class="input-group mb-2 mr-sm-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fas fa-signature"></i>
-                    </div>
-                  </div>
-                  <input name ="nombres" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Segundo nombre" [(ngModel)] = "Actualizaragente.SegundoNombre_Agentes" >
-                </div>
 
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" (click)="actualizaragente()">Actualizar</button>
+                </div>
+              </div>
             </div>
-            <div class="container">
-              <div class="input-group mb-2 mr-sm-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fas fa-rainbow"></i>
-                    </div>
-                  </div>
-                  <input name ="apellidop" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Primer Apellido"  [(ngModel)] = "Actualizaragente.PrimerApellido_Agentes">
-              </div>
-
-
-              <div class="sn input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"> 
-                      <i class="fas fa-rainbow"></i>
-                    </div>
-                  </div>
-                  <input name ="apellidos" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Segundo Apellido" [(ngModel)] = "Actualizaragente.SegundoApellido_Agentes">
-              </div>
-
-            </div>
-
-            <div class="container">
-
-                <div class="input-group mb-2 mr-sm-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="far fa-copyright"></i>
-                    </div>
-                  </div>
-                  <input name ="apellidos" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="# Identificación" [(ngModel)] = "Actualizaragente.NumeroDocumento_Agentes">
-                </div>
-
-                <select name="agent" id="agent" [(ngModel)] = "Actualizaragente.IdTipoDocumento_Agentes">
-                  <option *ngFor="let tipd of TipodeDocumento" value="{{tipd.IdtipoddeDocumento_TipodeDocumentos}}" >
-                    {{tipd.NombreTipodeDocumento_TipodeDocumentos}}   
-                  </option>
-                </select>
-
-            </div>
-
-            <div class="container">
-
-              <div class="fecha">
-                <label for="">Fecha de Nacimiento</label>
-                <input type="date" name="facha" id="fecha" [(ngModel)] = "Actualizaragente.FechaNacimiento_Agentes">
-              </div>
-
-              <div class="input-group mb-2 mr-sm-2">
-
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-mobile"></i>
-                  </div>
-                </div>
-                <input name ="numero" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Numero de Celular" [(ngModel)] = "Actualizaragente.NumeroTelfono_Agentes">
-              </div>
-
-            </div> 
-            <div class="container">
-
-              <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-mobile"></i>
-                  </div>
-                </div>
-                <input name ="correo" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Correo" [(ngModel)] = "Actualizaragente.Correo_Agentes">
-              </div>
-
-              <div class="input-group mb-2 mr-sm-2">
-
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-mobile"></i>
-                  </div>
-                </div>
-                <input name ="password" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password" [(ngModel)] = "Actualizaragente.Contrasena_Agentes">
-              </div>
-
-              <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-mobile"></i>
-                  </div>
-                </div>
-                <input name ="Estado" type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Estado" [(ngModel)] = "Actualizaragente.Estado_Agentes">
-              </div>
-                        
-            </div>
-
-            <button type="submit" class="btn btn-primary mb-2" (click)= "actualizaragente()">Actualizar</button>
-          </form>
+          </div>
         </div>
-      </section>
-  
-      <hr class="m-0">
-  
-      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-        <div class="w-100 as">
-          <h2 class="mb-5">Buscar</h2>
-          <div class="input-group mb-2 mr-sm-2">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <i class="fas fa-signature"></i>
-                </div>
-              </div>
-              <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id Cita" [(ngModel)]="idbuscar">
-            </div>
-            <button type="button" class="btn btn-primary" (click)="agentestraeruna()">Buscar</button>
-            <div class="table-container">
-              <table class="table-rwd">
-                <tr>
-                
-                    <th>id</th>
-                    <th>Tipo de Documento</th>
-                    <th>Numero de Documento</th>
-                    <th>Primer Nombre</th>
-                    <th>Segundo Nombre</th>
-                    <th>Primer Apellido</th>
-                    <th>Segundo Apellido</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Correo</th>
-                    <th>Contraseña</th>
-                    <th>Telefono</th>
-                    <th>Estados</th>
-                    <th>registro</th>
-                  
-                </tr>
-                <tr>
-                
-                  <td>{{buscaragente.IdAgente_Agentes}}</td>
-                  <td>{{buscaragente.IdTipoDocumento_Agentes}}</td>
-                  <td>{{buscaragente.NumeroDocumento_Agentes}}</td>
-                  <td>{{buscaragente.PrimerNombre_Agentes}}</td>
-                  <td>{{buscaragente.SegundoNombre_Agentes}}</td>
-                  <td>{{buscaragente.PrimerApellido_Agentes}}</td>
-                  <td>{{buscaragente.SegundoApellido_Agentes}}</td>
-                  <td>{{buscaragente.FechaNacimiento_Agentes}}</td>
-                  <td>{{buscaragente.Correo_Agentes}}</td>
-                  <td>{{buscaragente.Contrasena_Agentes}}</td>
-                  <td>{{buscaragente.NumeroTelfono_Agentes}}</td>
-                  <td>{{buscaragente.Estado_Agentes}}</td>
-                  <td>{{buscaragente.FechaRegistro_Agentes}}</td>
-                </tr>           
-              </table>
-            </div>
-        </div>
-      </section>
-  
-      <hr class="m-0">
-  
-      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="listar">
-        <div class="w-100">
-          <h2 class="mb-5">Listar</h2>
-          <button type="button" class="btn btn-primary"(click)= "agentestraer();">Buscar</button>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="listar">
+      <div class="w-100">
+        <h2 class="mb-5">Listar</h2>
+        <button type="button" class="btn btn-primary" (click)="agentestraer();">Buscar</button>
         <div class="table-container table-dark">
           <table class="table-rwd">
             <tr>
@@ -365,7 +368,7 @@
               <th>Estados</th>
               <th>registro</th>
             </tr>
-            <tr *ngFor="let agente of agente">         
+            <tr *ngFor="let agente of agente">
               <td>{{agente.IdAgente_Agentes}}</td>
               <td>{{agente.NombreTipodeDocumento_TipodeDocumentos}}</td>
               <td>{{agente.NumeroDocumento_Agentes}}</td>
@@ -379,12 +382,10 @@
               <td>{{agente.NumeroTelfono_Agentes}}</td>
               <td>{{agente.Estado_Agentes}}</td>
               <td>{{agente.FechaRegistro_Agentes}}</td>
-            </tr>           
+            </tr>
           </table>
         </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
-  
-  
+</div>

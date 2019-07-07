@@ -14,16 +14,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="cliente#Crear">Crear</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="cliente#Crear">Crear cliente</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="cliente#modificar">Modificar</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="cliente#listar">Listar clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="cliente#listar">Listar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger animated zoomInRight" href="cliente#buscar">Buscar</a>
+          <a class="nav-link js-scroll-trigger animated zoomInRight" href="cliente#buscar">Buscar y Actualizar</a>
         </li>
       </ul>
     </div>
@@ -33,14 +30,14 @@
     <div class="container">
       <h4>Crear Cliente</h4>
     </div>
-
+    
     <div>
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-signature"></i></span>
         </div>
         <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre" name="PrimerNombre"
-          [(ngModel)]="NuevoCliente.PrimerNombre_Clientes"></textarea>
+          [(ngModel)]="ActualizarCliente.PrimerNombre_Clientes"></textarea>
       </div>
       <div class="input-group">
         <div class="input-group-prepend">
@@ -99,104 +96,15 @@
         <input type="text" class="form-control" placeholder="Numero de Telefono"
           [(ngModel)]="NuevoCliente.NumeroTelefono_Clientes" required>
       </div>
-      <div class="input-group">
+      <!-- <div class="input-group">
         <label for="exampleInputEmail1">Estado Clientes</label><br />
         <select class="selectpicker" data-live-search="true" [(ngModel)]="NuevoCliente.Estado_Clientes">
-          <option data-tokens="ketchup mustard" value="ACTIVO">Activo</option>
-          <option data-tokens="mustard" value="INACTIVO">In Activo</option>
+          <option data-tokens="ketchup mustard" value="ACTIVO">ACTIVO</option>
+          <option data-tokens="mustard" value="INACTIVO">INACTIVO</option>
         </select>
-      </div>
+      </div> -->
       <div class="botones">
         <button type="button" class="btn btn-primary" (click)="CrearCliente()">Crear</button>
-      </div>
-
-    </div>
-
-    <div id="modificar">
-      <div class="container">
-        <h4>Modificar Cliente</h4>
-      </div>
-
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
-        </div>
-        <textarea class="form-control" aria-label="Id" placeholder="Id" name="Id"
-          [(ngModel)]="ActualizarCliente.IdCliente_Clientes"></textarea>
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-signature"></i></span>
-        </div>
-        <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre" name="PrimerNombre"
-          [(ngModel)]="ActualizarCliente.PrimerNombre_Clientes"></textarea>
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-signature"></i></span>
-        </div>
-        <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre" name="SegundoNombre"
-          [(ngModel)]="ActualizarCliente.SegundoNombre_Clientes"></textarea>
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
-        </div>
-        <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido" name="PrimerApellido"
-          [(ngModel)]="ActualizarCliente.PrimerApellido_Clientes"></textarea>
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
-        </div>
-        <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"
-          name="SegundoApellido" [(ngModel)]="ActualizarCliente.SegundoApellido_Clientes"></textarea>
-      </div>
-      <div class="input-group-prepend input-group alinear">
-        <label for="TipoDocumento">Tipo de Documento</label>
-        <select name="tipoDocumento" id="" [(ngModel)]="ActualizarCliente.IdTipoDocumento_Clientes">
-          <option *ngFor="let TipoDocumento of TipoDocumentos"
-            value="{{TipoDocumento.IdtipoddeDocumento_TipodeDocumentos}}">
-            {{TipoDocumento.NombreTipodeDocumento_TipodeDocumentos}}
-          </option>
-        </select>
-        <input type="number" placeholder="Numero de Documento" [(ngModel)]="ActualizarCliente.NumeroDocuemto_Clientes">
-      </div>
-      <div class="input-group-prepend input-group">
-        <label for="FechaNacimiento">Fecha de Nacimiento</label>
-        <p> </p>
-        <input type="date" id="FechaNacimiento" [(ngModel)]="ActualizarCliente.FechaNacimiento_Clientes">
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-        </div>
-        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="ActualizarCliente.Correo_Clientes"
-          required>
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-unlock"></i></span>
-        </div>
-        <input type="password" class="form-control" placeholder="Contraseña"
-          [(ngModel)]="ActualizarCliente.Contrasena_Clientes" required>
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-phone-square"></i></span>
-        </div>
-        <input type="text" class="form-control" placeholder="Numero de Telefono"
-          [(ngModel)]="ActualizarCliente.NumeroTelefono_Clientes" required>
-      </div>
-      <div class="input-group">
-        <label for="exampleInputEmail1">Estado Clientes</label><br />
-        <select class="selectpicker" data-live-search="true" [(ngModel)]="ActualizarCliente.Estado_Clientes">
-          <option data-tokens="ketchup mustard" value="ACTIVO">Activo</option>
-          <option data-tokens="mustard" value="INACTIVO">In Activo</option>
-        </select>
-      </div>
-      <div class="botones">
-        <button type="button" class="btn btn-primary botones" (click)="actualizarCliente()">Actualizar</button>
       </div>
 
     </div>
@@ -245,7 +153,7 @@
       </table>
     </div>
     <div class="container table-container" id="buscar">
-      <h4>Buscar Cliente</h4>
+      <h4>Buscar y Actualizar</h4>
       <input type="text" placeholder="id" name="id" [(ngModel)]="idBusqueda" min="1">
       <button type="button" class="btn btn-primary" (click)="obtenerClienteBuscar(idBusqueda)">Buscar</button>
       <table class="table table-dark table-fixed">
@@ -264,6 +172,7 @@
             <th scope="col">Telefono</th>
             <th scope="col">Estado</th>
             <th scope="col">Fecha de Registro</th>
+            <th>Actualizar</th>
           </tr>
         </thead>
         <tbody>
@@ -283,10 +192,107 @@
             <th scope="col">{{BuscarCliente.NumeroTelefono_Clientes}}</th>
             <th scope="col">{{BuscarCliente.Estado_Clientes}}</th>
             <th scope="col">{{BuscarCliente.FechaRegistro_Clientes}}</th>
+            <th><button (click)="buscarClienteActualizar(BuscarCliente.IdCliente_Clientes)" type="button" class="btn btn-primary"
+              data-toggle="modal" data-target="#ActualizarCliente">
+              Actualizar
+            </button></th>
           </tr>
 
         </tbody>
       </table>
+      <div class="modal fade" id="ActualizarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Actualizar Cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-signature"></i></span>
+                        </div>
+                        <textarea class="form-control" aria-label="PrimerNombre" placeholder="Primer Nombre" name="PrimerNombre"
+                          [(ngModel)]="ActualizarCliente.PrimerNombre_Clientes"></textarea>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-signature"></i></span>
+                        </div>
+                        <textarea class="form-control" aria-label="SegundoNombre" placeholder="Segundo Nombre" name="SegundoNombre"
+                          [(ngModel)]="ActualizarCliente.SegundoNombre_Clientes"></textarea>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+                        </div>
+                        <textarea class="form-control" aria-label="PrimerApellido" placeholder="Primer Apellido" name="PrimerApellido"
+                          [(ngModel)]="ActualizarCliente.PrimerApellido_Clientes"></textarea>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fab fa-phoenix-framework"></i></span>
+                        </div>
+                        <textarea class="form-control" aria-label="SegundoApellido" placeholder="Segundo Apellido"
+                          name="SegundoApellido" [(ngModel)]="ActualizarCliente.SegundoApellido_Clientes"></textarea>
+                      </div>
+                      <div class="input-group-prepend input-group">
+                        <label for="TipoDocumento">Tipo de Documento</label>
+                        <select name="tipoDocumento" id="" [(ngModel)]="ActualizarCliente.IdTipoDocumento_Clientes">
+                          <option *ngFor="let TipoDocumento of TipoDocumentos"
+                            value="{{TipoDocumento.IdtipoddeDocumento_TipodeDocumentos}}">
+                            {{TipoDocumento.NombreTipodeDocumento_TipodeDocumentos}}
+                          </option>
+                        </select>
+                        <input type="number" placeholder="Numero de Documento" [(ngModel)]="ActualizarCliente.NumeroDocuemto_Clientes">
+                      </div>
+                      <div class="input-group-prepend input-group">
+                        <label for="FechaNacimiento">Fecha de Nacimiento</label>
+                        <p> </p>
+                        <input type="date" id="FechaNacimiento" [(ngModel)]="ActualizarCliente.FechaNacimiento_Clientes">
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="ActualizarCliente.Correo_Clientes"
+                          required>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Contraseña"
+                          [(ngModel)]="ActualizarCliente.Contrasena_Clientes" required>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-phone-square"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Numero de Telefono"
+                          [(ngModel)]="ActualizarCliente.NumeroTelefono_Clientes" required>
+                      </div>
+                      <div class="input-group">
+                        <label for="exampleInputEmail1">Estado Clientes</label><br />
+                        <select class="selectpicker" data-live-search="true" [(ngModel)]="ActualizarCliente.Estado_Clientes">
+                          <option data-tokens="ketchup mustard" value="ACTIVO">ACTIVO</option>
+                          <option data-tokens="mustard" value="INACTIVO">INACTIVO</option>
+                        </select>
+                      </div>
+                      
+                
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="actualizarCliente()">Actualizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
   </div>

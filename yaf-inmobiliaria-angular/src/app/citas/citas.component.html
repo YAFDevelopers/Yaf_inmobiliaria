@@ -28,9 +28,7 @@
       </ul>
     </div>
   </nav>
-  <!-----------------------------------------------------------------------------------------------------------
-  AGENDAR 
-  -------------------------------------------------------------------------------------------------------- -->
+
   <div class="container-fluid p-0">
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
@@ -42,6 +40,9 @@
         <p class="lead mb-5 animated bounceInRight">En este espacio podras agendar una cita,modificar o hacer busquedas
           para que puedas organizar mejor tu tiempo, mas secar de ti.</p>
       </div>
+      <!-----------------------------------------------------------------------------------------------------------
+  AGENDAR 
+  -------------------------------------------------------------------------------------------------------- -->
     </section>
     <hr class="m-0">
     <main class="p-y-1">
@@ -124,7 +125,7 @@
 
     <!--Modificar-->
     <hr class="m-0">
-    
+
     <hr class="m-0">
 
     <!--Buscar-->
@@ -165,7 +166,8 @@
               <td>{{Buscarcita.nombreCliente}}</td>
               <td>{{Buscarcita.NombreInmueble_Inmuebles}}</td>
               <td>{{Buscarcita.FechaRegistro_Citas}}</td>
-              <td><button (click)="buscarCitaActualizar(Buscarcita.IdCita_Citas)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ActualizarCita">
+              <td><button (click)="buscarCitaActualizar(Buscarcita.IdCita_Citas)" type="button" class="btn btn-primary"
+                  data-toggle="modal" data-target="#ActualizarCita">
                   Actualizar
                 </button></td>
             </tr>
@@ -218,12 +220,12 @@
               </div>
 
               <div class="form-group row ">
-                    <label for="estado" class="col-md-4 col-form-label">Estado</label>
-                    <select name="estado" id="inmu" [(ngModel)]="Actualizarcita.Estado_Citas" class="form-control">
-                      <option value="ACTIVO">ACTIVO</option>
-                      <option value="INACTIVO">INACTIVO</option>
-                    </select>
-                  </div>
+                <label for="estado" class="col-md-4 col-form-label">Estado</label>
+                <select name="estado" id="inmu" [(ngModel)]="Actualizarcita.Estado_Citas" class="form-control">
+                  <option value="ACTIVO">ACTIVO</option>
+                  <option value="INACTIVO">INACTIVO</option>
+                </select>
+              </div>
 
 
               <div class="form-group row">
